@@ -7,7 +7,7 @@ public class Main {
             String bulmakIstenilen = "trak";
             System.out.println(str.contains(bulmakIstenilen) ? "bulmak istenilen string var" : "bulmak istenilen yok");
         }
-        kolon();
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         {
             //compareTo
             //istenilen string'i istenilen string'e alfabeye göre karşılaştırmasını yapar ve int değer döndürür
@@ -17,7 +17,7 @@ public class Main {
 
 
         }
-        kolon();
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         {
             //concat
             //istenilen iki string'i birleştirir ve birleştirilmiş stringi yeni nesne olarak verir
@@ -25,7 +25,7 @@ public class Main {
             String str2 = "World!";
             System.out.println(str1.concat(str2));
         }
-        kolon();
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         {
             //substring
             //verilen string'in istenen değer aralıklarını yeni nesne olarak verir
@@ -34,9 +34,7 @@ public class Main {
         }
 
     }
-    public static void kolon(){
-        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-    }
+
 
 
 
