@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
         {
             //contains
             //istenilen string'i istenilen string içinde varmı kontrol ediyor döndürdüğü ise sadece boolean true ve false'dır
@@ -32,6 +33,17 @@ public class Main {
             String str1 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio";
             System.out.println(str1.substring(0,12));
         }
+        System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+        /*consolda görünen değer
+        ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+        bulmak istenilen string var
+        ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+        -2
+        ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+        hello World!
+        ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+        Lorem ipsum
+        ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬*/
 
     }
 
