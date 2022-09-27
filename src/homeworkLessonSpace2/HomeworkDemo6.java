@@ -7,12 +7,14 @@ public class HomeworkDemo6 {
         //Scanner class
         Scanner keyboard = new Scanner(System.in);
         //variables
-        String allWords = "", input = "";
+        String allWords = "", input = "" , breakWord = "elma";
+        //System message
         System.out.println("Please enter your inputs to want to be combine ...");
-        while (!input.equalsIgnoreCase("elma")) {
+        //while loop for the combine
+        while (!input.equalsIgnoreCase(breakWord)) {
+            if (input.equalsIgnoreCase(breakWord))break;
             input = keyboard.nextLine();
             input = input.trim();
-            if (input.equalsIgnoreCase("elma"))break;
             allWords += allWords.equals("")?input:"-".concat(input);
         }
         System.out.println(allWords);
