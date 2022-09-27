@@ -1,4 +1,4 @@
-package Hmwk2;
+package homeworkLessonSpace2;
 
 public class HomeworkDemo5 {
     public static void main(String[] args) {
