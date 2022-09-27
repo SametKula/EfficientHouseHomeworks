@@ -7,15 +7,19 @@ public class HomeworkDemo6 {
         //Scanner class
         Scanner keyboard = new Scanner(System.in);
         //variables
-        String allWords = "", input = "" , breakWord = "elma";
+        String allWords = "", breakWord = "elma";
         //System message
         System.out.println("Please enter your inputs to want to be combine ...");
         //while loop for the combine
-        while (!input.equalsIgnoreCase(breakWord)) {
-            if (input.equalsIgnoreCase(breakWord))break;
+        while (true) {
+            String input = "";
             input = keyboard.nextLine();
-            input = input.trim();
-            allWords += allWords.equals("")?input:"-".concat(input);
+            if (input.equalsIgnoreCase(breakWord)) break;
+            if (allWords.isEmpty()) {
+                allWords += input.trim();
+            } else {
+                allWords += "-".concat(input.trim());
+            }
         }
         System.out.println(allWords);
         /*
