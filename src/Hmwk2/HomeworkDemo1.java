@@ -1,6 +1,6 @@
 package Hmwk2;
 
-public class Main {
+public class HomeworkDemo1 {
     public static void main(String[] args) {
         System.out.println("Welcome to calorie Calculator");
         System.out.printf("%nplease enter a value -----------(insert type >>>\"activity,weight(kg),minutes\")%n>>>Basketball%n>>>68%n>>>30%n");

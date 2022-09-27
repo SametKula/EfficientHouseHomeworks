@@ -1,6 +1,6 @@
 package Hmwk2;
 
-public class Main5 {
+public class HomeworkDemo5 {
     public static void main(String[] args) {
         //paragraph
         String str1= "I hate everything , I hate purple, I hate tarhana soup, I hate etliekmek";

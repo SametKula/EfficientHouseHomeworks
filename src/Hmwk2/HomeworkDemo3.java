@@ -1,6 +1,6 @@
 package Hmwk2;
 
-public class Main3 {
+public class HomeworkDemo3 {
     public static void main(String[] args) {
         //Strings
         String str1 = "walt";
