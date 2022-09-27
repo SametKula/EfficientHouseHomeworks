@@ -12,16 +12,12 @@ public class HomeworkDemo6 {
         System.out.println("Please enter your inputs to want to be combine ...");
         //while loop for the combine
         while (true) {
-            String input = "";
-            input = keyboard.nextLine();
+            String input = keyboard.nextLine();
+            if (input.trim().isEmpty())continue;
             if (input.equalsIgnoreCase(breakWord)) break;
-            if (allWords.isEmpty()) {
-                allWords += input.trim();
-            } else {
-                allWords += "-".concat(input.trim());
-            }
+            allWords += "-".concat(input.trim());
         }
-        System.out.println(allWords);
+        System.out.println(allWords.substring(1,allWords.length()));
         /*
         Please enter your inputs to want to be combine ...
         ankara
