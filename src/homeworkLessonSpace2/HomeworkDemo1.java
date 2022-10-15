@@ -1,14 +1,24 @@
 package homeworkLessonSpace2;
 
+import java.util.Scanner;
+
 public class HomeworkDemo1 {
     public static void main(String[] args) {
-        System.out.println("Welcome to calorie Calculator");
-        System.out.printf("%nplease enter a value -----------(insert type >>>\"activity,weight(kg),minutes\")%n>>>Basketball%n>>>68%n>>>30%n");
-        System.out.println("▬▬▬your calorie expenditure is "+caloriesCalculator("running",68,30)+" calories▬▬▬");
-        System.out.printf("%nplease enter a value -----------(insert type >>>\"activity,weight(kg),minutes\")%n>>>Basketball%n>>>68%n>>>30%n");
-        System.out.println("▬▬▬your calorie expenditure is "+caloriesCalculator("basketball",68,30)+" calories▬▬▬");
-        System.out.printf("%nplease enter a value -----------(insert type >>>\"activity,weight(kg),minutes\")%n>>>Basketball%n>>>68%n>>>30%n");
-        System.out.println("▬▬▬your calorie expenditure is "+caloriesCalculator("sleeping",68,60*6)+" calories▬▬▬");
+        Scanner keyboard = new Scanner(System.in);
+        System.out.printf("Welcome to calorie Calculator%n");
+        System.out.printf("%nplease enter a value -----------(insert type >>>\"activity,weight(kg),minutes\") (activities is : running , basketball , sleeping):%n");
+        System.out.print("Activitie:");
+        String sports = keyboard.next();
+        System.out.print("Weight:");
+        int weight = keyboard.nextInt();
+        System.out.print("Minutes:");
+        int minutes = keyboard.nextInt();
+
+
+
+
+        System.out.println("▬▬▬  your calorie expenditure is "+caloriesCalculator(sports,weight,minutes)+" calories  ▬▬▬");
+
 
 
 
