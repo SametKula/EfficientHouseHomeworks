@@ -1,10 +1,16 @@
 package homeworkLessonSpace2;
 
+import java.util.Scanner;
+
 public class HomeworkDemo3 {
     public static void main(String[] args) {
+        //Scanner class
+        Scanner keyboard = new Scanner(System.in);
         //Strings
-        String str1 = "walt";
-        String str2 = "savitch";
+        System.out.print("first word:");
+        String str1 = keyboard.next();
+        System.out.print("second word:");
+        String str2 = keyboard.next();
         System.out.printf("Welcome to pig latininator %nEnter two strings to your want to transform %n----------------------%n>>> First string : %s %n>>> Second string : %s %n---------------------------+%n", str1, str2);
         //first string field
         String strFirstLetter = str1.charAt(0) + "";
