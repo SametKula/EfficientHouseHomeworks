@@ -1,5 +1,7 @@
 package selfExercises;
 
+import java.util.Scanner;
+
 public class ChapterTwoExercises {
     public static void main(String[] args) {
         // self exercises page 61
@@ -32,6 +34,12 @@ public class ChapterTwoExercises {
 
         System.out.printf("the real double is : %f%nwantet syntax : %12.3f",d,d);
 */
+        Scanner keyboard = new Scanner(System.in);
+        int num1 , num2 ;
+        keyboard.useDelimiter("##");
+        num1 = keyboard.nextInt();
+        num2 = keyboard.nextInt();
+        System.out.println(num1+ " " + num2);
 
 
 
