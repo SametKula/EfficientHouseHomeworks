@@ -1,11 +1,15 @@
 package homeworkLessonSpace2;
 
+import java.util.Scanner;
+
 public class HomeworkDemo2 {
     public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
         System.out.println("Welcome to coupons2candybar calculator(if )");
         //coupon value
-        int coupons = 54;
-        System.out.printf("enter coupons %n>>>%d%n",coupons);
+        System.out.print("How many coupons do you have:");
+        int coupons = keyboard.nextInt();
+
 
         //prizes
         int candyBarPrice = 10;
