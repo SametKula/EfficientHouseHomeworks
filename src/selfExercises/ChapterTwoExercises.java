@@ -33,6 +33,8 @@ public class ChapterTwoExercises {
         double d = 23564.2132654532121516;
 
         System.out.printf("the real double is : %f%nwantet syntax : %12.3f",d,d);
+
+
 */
         Scanner keyboard = new Scanner(System.in);
         int num1 , num2 ;
