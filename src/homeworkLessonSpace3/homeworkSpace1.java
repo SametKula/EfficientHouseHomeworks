@@ -124,9 +124,9 @@ public class homeworkSpace1 {
         lowest = lowest(numberTheree, lowest(numberOne,numberTwo));
         midle = mid(numberOne,numberTwo,numberTheree);
         String str1 = highest+">"+midle+">"+lowest;
-        str1 = str1.equals("60>50>30")? _greenConsoleOut +"Basarili" + _resetConsoleOut :_redConsoleOut+ "reddedildi"+_resetConsoleOut;
+        str1 = str1.equals(highest+">"+midle+">"+lowest)? _greenConsoleOut +"Basarili" + _resetConsoleOut :_redConsoleOut+ "reddedildi"+_resetConsoleOut;
         // System.out.printf("en büyük : %d %nortanca : %d%nen küçük : %d %n", highest,mid,lowest);
-        System.out.printf("%d %s %d %s %d    %s %n",highest ,"> " , midle , " >" , lowest,str1);
+        System.out.printf("%d %s %d %s %d    %s %n",highest ,highest==midle ? "=":">" , midle , midle==lowest ? "=":">" , lowest,str1);
 
     }
     public static int highest(int numberOne , int numberTwo )
