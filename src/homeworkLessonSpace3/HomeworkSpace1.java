@@ -2,8 +2,10 @@ package homeworkLessonSpace3;
 
 
 public class HomeworkSpace1 {
+
     public static void main(String[] args) {
         run();
+
     }
 
     //Runtime Method
@@ -30,7 +32,7 @@ public class HomeworkSpace1 {
     //Display area
     public static void display(int x, int y, int z) {
         //Declerations
-        int _max, _min, _midle;
+        int _max, _min, _midle ;
 
         //Calculate area
         _max = max(z, max(x, y));//Finding highiest number using max method

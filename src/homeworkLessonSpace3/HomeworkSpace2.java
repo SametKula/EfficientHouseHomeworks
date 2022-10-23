@@ -32,7 +32,7 @@ public class HomeworkSpace2 {
     }
 
     //finder of midle number
-    public static int midleNumberFinder(int x, int y, int z) {
+    public static int midleNumberFinder(int x, int y, int z) {//60 50 30
         //if stantment for y is midle a number
         if (x <= y & y <= z || y >= z && y <= x)
             return y;
@@ -45,4 +45,5 @@ public class HomeworkSpace2 {
         return z;
 
     }
+
 }
