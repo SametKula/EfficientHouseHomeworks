@@ -1,8 +1,7 @@
 package homeworkLessonSpace3;
-import java.io.*;
 import java.util.Scanner;
 
-public class homeworkSpace1 {
+public class HomeworkSpace1 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int numberOne , numberTwo , numberTheree , highest = 0, lowest = 0 , mid = 0;
