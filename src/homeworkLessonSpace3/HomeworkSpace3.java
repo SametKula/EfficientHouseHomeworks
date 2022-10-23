@@ -12,12 +12,10 @@ public class HomeworkSpace3 {
     private static void run() {
         Scanner keyboard = new Scanner(System.in);
 
-        int input;
-
         System.out.println("enter a number");
 
         System.out.print("number: ");
-        input = keyboard.nextInt();
+        int input = keyboard.nextInt();
 
         display(signum(input));
     }
