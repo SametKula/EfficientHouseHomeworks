@@ -1,62 +1,61 @@
 package homeworkLessonSpace3;
 
-import java.util.Scanner;
 
 public class HomeworkSpace1 {
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        int numberOne, numberTwo, numberTheree, highest , lowest , mid ;
-            System.out.print(_resetConsoleOut + "number one:");
-            numberOne = keyboard.nextInt();
-            System.out.print("number two:");
-            numberTwo = keyboard.nextInt();
-            System.out.print("number theree:");
-            numberTheree = keyboard.nextInt();
-            System.out.println("");
-            calculator(numberOne, numberTwo, numberTheree);
+        run();
     }
 
-    public static void calculator(int numberOne, int numberTwo, int numberTheree) {
-        int highest, lowest, midle;
-        highest = highest(numberTheree, highest(numberOne, numberTwo));
-        lowest = lowest(numberTheree, lowest(numberOne, numberTwo));
-        midle = mid(numberOne, numberTwo, numberTheree);
-        String str1 = highest + ">" + midle + ">" + lowest;
-        str1 = str1.equals(highest + ">" + midle + ">" + lowest) ? _greenConsoleOut + "Basarili" + _resetConsoleOut : _redConsoleOut + "reddedildi" + _resetConsoleOut;
-        System.out.printf("%d %s %d %s %d    %s %n", highest, highest == midle ? "=" : ">", midle, midle == lowest ? "=" : ">", lowest, str1);
-    }
-    public static int highest(int numberOne, int numberTwo) {
-        return numberOne > numberTwo ? numberOne : numberTwo;
-    }
+    //Runtime Method
+    public static void run(){
+        //Scanner class
+        java.util.Scanner keyboard = new java.util.Scanner(System.in);
 
-    public static int lowest(int numberOne, int numberTwo) {
-        return numberOne > numberTwo ? numberTwo : numberOne;
+        //Declerations
+        int x, y, z;
+
+        //Ruinnging time actions
+        System.out.print("number one:");
+        x = keyboard.nextInt();
+
+        System.out.print("number two:");
+        y = keyboard.nextInt();
+
+        System.out.print("number there:");
+        z = keyboard.nextInt();
+
+        //Method to usage console display
+        display(x, y, z);
     }
+    //Display area
+    public static void display(int x, int y, int z) {
+        //Declerations
+        int _max, _min, _midle;
 
-    public static int mid(int numberOne, int numberTwo, int numberTheree) {
-        int highest, lowest;
-        highest = highest(numberTheree, highest(numberOne, numberTwo));
-        lowest = lowest(numberTheree, lowest(numberOne, numberTwo));
-        if (highest == numberOne) {
-            if (lowest == numberTwo)
-                return numberTheree;
-            else return numberTwo;
-        } else if (highest == numberTwo) {
-            if (lowest == numberOne)
-                return numberTheree;
-            else return numberOne;
-        } else if (highest == numberTheree) {
-            if (lowest == numberTwo)
-                return numberOne;
-            else return numberTwo;
-        }
+        //Calculate area
+        _max = max(z, max(x, y));//Finding highiest number using max method
 
-        return 0;
+        _min = min(z, min(x, y));//Finding lowiest  number using min method
+
+        _midle = x + y + z - (_max + _min);
+
+        //Console output area                                        check equals or not
+        System.out.printf("%d %s %d %s %d %n", _max, _max == _midle ? "=" : ">", _midle, _midle == _min ? "=" : ">", _min);
     }
-
-    public static final String _redConsoleOut = "\u001B[31m";
-    public static final String _greenConsoleOut = "\u001B[32m";
-    public static final String _resetConsoleOut = "\u001B[37m";
+    //max method for find highiest number around two numbers
+    public static int max(int x, int y) {
+        if (x > y)
+            return x;
+        else
+            return y;
+    }
+    //min method for find lowiest number around two numbers
+    public static int min(int x, int y) {
+        if (x > y)
+            return y;
+        else
+            return x;
+    }
 
 
 }

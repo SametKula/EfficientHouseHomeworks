@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HomeworkSpace3 {
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+        java.util.Scanner keyboard = new java.util.Scanner(System.in);
         System.out.println("enter a number");
         System.out.print("number: ");
         int input = keyboard.nextInt();
