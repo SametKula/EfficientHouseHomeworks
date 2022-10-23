@@ -1,50 +1,48 @@
 package homeworkLessonSpace3;
 
-import java.util.Scanner;
 
 public class HomeworkSpace2 {
     public static void main(String[] args) {
+
+        //Main Running method
+        run();
+
+
+    }
+
+    public static void run() {
+        //Scanner class
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
-        int numberOne, numberTwo, numberTheree;
-        numberOne = keyboard.nextInt();
-        numberTwo = keyboard.nextInt();
-        numberTheree = keyboard.nextInt();
-        System.out.printf("ortanca sayi : %d", mid(numberOne, numberTwo, numberTheree));
+
+        //declerations
+        int x, y, z;
+
+        //runtime actions and input area
+        System.out.print("number one:");
+        x = keyboard.nextInt();
+
+        System.out.print("number two:");
+        y = keyboard.nextInt();
+
+        System.out.print("number there:");
+        z = keyboard.nextInt();
+
+        //display output
+        System.out.printf("ortanca sayi : %d", midleNumberFinder(x, y, z));
     }
 
-    public static int mid(int numberOne, int numberTwo, int numberTheree) {
-        int highest = highOne(numberOne, highOne(numberTwo, numberTheree));
-        int lowest = lowOne(numberOne, lowOne(numberTwo, numberTheree));
-        return differentOne(highest, lowest, numberOne, numberTwo, numberTheree);
-    }
+    //finder of midle number
+    public static int midleNumberFinder(int x, int y, int z) {
+        //if stantment for y is midle a number
+        if (x <= y & y <= z || y >= z && y <= x)
+            return y;
 
-    public static int highOne(int numberOne, int numberTwo) {
-        if (numberOne >= numberTwo) return numberOne;
-        else return numberTwo;
-    }
+        //if stantment for x is midle a number
+        if (y <= x & x <= z || x >= z && x <= y)
+            return x;
 
-    public static int lowOne(int numberOne, int numberTwo) {
-        if (numberOne >= numberTwo) return numberTwo;
-        else return numberOne;
-    }
+        //otherwise ofcourse z is midle number
+        return z;
 
-    public static int differentOne(int highest, int lowest, int numberOne, int numberTwo, int numberTheree) {
-        if (highest == numberOne || highest == numberTwo) {
-            if (lowest == numberOne || lowest == numberTwo) {
-                return numberTheree;
-            }
-        }
-        if (highest == numberOne || highest == numberTheree) {
-            if (lowest == numberOne || lowest == numberTheree) {
-                return numberTwo;
-            }
-        }
-
-        if (highest == numberTheree || highest == numberTwo) {
-            if (lowest == numberTheree || lowest == numberTwo) {
-                return numberOne;
-            }
-        }
-        return 0;
     }
 }
