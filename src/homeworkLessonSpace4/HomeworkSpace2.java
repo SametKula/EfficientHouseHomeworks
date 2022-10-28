@@ -9,16 +9,16 @@ public class HomeworkSpace2 {
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
 
         System.out.print("please enter your want to know to is it a prime number: ");
-        int input = keyboard.nextInt();
+        long input = keyboard.nextLong();
 
 
         isPrimeToDisplay(isPrime(input));
 
     }
-    public static boolean isPrime(int x ){
+    public static boolean isPrime(long x ){
 
-        for (int i = x - 1; i > 1; i--)
-            if (x % i == 0 )
+        for (long i = x / 2; i > 1 ; i--)
+            if (x % i == 0)
                 return false;
 
         return true;
