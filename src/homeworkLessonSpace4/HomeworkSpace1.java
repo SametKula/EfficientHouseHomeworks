@@ -13,9 +13,7 @@ public class HomeworkSpace1 {
         System.out.print("please enter your want to know to is it a amstrong number: ");
         int input = keyboard.nextInt();
 
-        boolean isInputAmstrong = isAmstrong(input);
-
-        isAmstrongToDisplay(isInputAmstrong);
+        isAmstrongToDisplay(isAmstrong(input));
     }
 
 
