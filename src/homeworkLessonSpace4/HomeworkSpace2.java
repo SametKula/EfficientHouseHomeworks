@@ -21,13 +21,10 @@ public class HomeworkSpace2 {
     }
 
     public static boolean isPrime(long x) {
-        if (x <= 1)
-            return false;
-
-        if (x ==2)
+        if (x == 2)
             return true;
 
-        if (x % 2 == 0)
+        if (x <= 1 || x % 2 == 0)
             return false;
 
         for (long i = 3; i < x / 2; i += 2)
