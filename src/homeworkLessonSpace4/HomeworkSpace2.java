@@ -24,6 +24,9 @@ public class HomeworkSpace2 {
         if (x <= 1)
             return false;
 
+        if (x ==2)
+            return true;
+
         if (x % 2 == 0)
             return false;
 
