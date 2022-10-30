@@ -14,8 +14,16 @@ public class HomeworkSpace2 {
 
         System.out.println("");
 
+
+
+        //faktorial
         for (int input = 1; input < 30; input++)
-            System.out.printf("%d. prime number is %d %n",input,getPrimeIndex(input));
+            System.out.printf("%d! is : %d%n",input,factorial(input));
+
+
+        //is prime things
+        /*for (int input = 1; input < 30; input++)
+            System.out.printf("%d. prime number is %d %n",input,getPrimeIndex(input));*/
             /*if (isPrime(input))
                 System.out.printf("%d is %d. prime number%n",input,getPrime(input));
             else
@@ -49,16 +57,21 @@ public class HomeworkSpace2 {
         return count;
     }
 
-    public static long getPrimeIndex(int x ){
-        long temp ;
-
+    public static long getPrimeIndex(int x )
+    {
         for (int i = 1 ; ; i += 2)
             if (getPrime(i) == x){
-                temp = i;
-                break;
+                return i;
             }
 
-        return temp;
+    }
+    public static long factorial(int x){
+        int sum = 1;
+
+        for (int i = 1; i <= x;i++)
+            sum *= i;
+
+        return sum;
     }
 
     public static void isPrimeToDisplay(boolean b, long x) {
