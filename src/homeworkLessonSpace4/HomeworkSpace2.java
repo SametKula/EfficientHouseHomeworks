@@ -13,9 +13,8 @@ public class HomeworkSpace2 {
         //long input = keyboard.nextLong();
 
 
-        for (int input = 0; input<100; input++)
+        for (int input = 0; input < 100; input++)
             isPrimeToDisplay(isPrime(input), input);
-
 
 
     }
