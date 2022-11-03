@@ -8,7 +8,7 @@ public class AnswerField6 {
     public static void run() {
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
 
-        int input1 = 1,input2 ;
+        int input1 = 1, input2;
 
 
         while (true) {
@@ -23,13 +23,13 @@ public class AnswerField6 {
             input2 = keyboard.nextInt();
             System.out.println();
 
-            displayIsRiskySodaPop(input1,input2);
+            displayIsRiskySodaPop(input1, input2);
 
         }
     }
 
-    public static void displayIsRiskySodaPop(int weight, int days ){
-        if (isPopSodaRisky(weight,days))
+    public static void displayIsRiskySodaPop(int weight, int days) {
+        if (isPopSodaRisky(weight, days))
             System.out.println("its not risky for you <3");
 
         else
@@ -39,7 +39,7 @@ public class AnswerField6 {
 
     public static boolean isPopSodaRisky(int weight, int days) {
 
-        for (int dose = 1; weight / dose > 10 ; dose++, --days,weight -= dose)
+        for (int dose = 1; weight / dose > 10; dose++, --days, weight -= dose)
             if (days <= 0)
                 return true;
 
