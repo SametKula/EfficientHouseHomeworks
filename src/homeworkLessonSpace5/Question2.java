@@ -7,11 +7,11 @@ public class Question2 {
 
     public static void run() {
 
-        rgbInput();
+        rgbMethodRun();
 
     }
     //buralarda biraz düzenleme yapıcam gibi
-    public static void rgbInput() {
+    public static void rgbMethodRun() {
 
         displayIsValid(isValidType(rgbInputLoop()));
 
