@@ -13,7 +13,7 @@ public class Question2 {
     //buralarda biraz düzenleme yapıcam gibi
     public static void rgbMethodRun() {
 
-        displayIsValid(isValidType());
+        displayIsValid(isValidTypeAndInputLoop());
 
     }
 
@@ -43,7 +43,7 @@ public class Question2 {
 
     }
 
-    public static boolean isValidType() {
+    public static boolean isValidTypeAndInputLoop() {
         String x = rgbInputLoop();
         for (int i = 0; i < x.length() - 1; i++)
             if (x.substring(i, i + 1).equals(x.substring(i + 1, i + 2)))
