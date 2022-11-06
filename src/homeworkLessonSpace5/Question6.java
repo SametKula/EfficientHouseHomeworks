@@ -2,43 +2,31 @@ package homeworkLessonSpace5;
 
 public class Question6 {
     public static void main(String[] args) {
-        finobacciNumber(25);
+        finobacciNumber(0);
     }
 
 
-    public static void finobacciNumber(int loopTimes){
+    public static void finobacciNumber(int loopTimes) {
         System.out.println(finobacciLoop(loopTimes));
 
     }
 
-    public static int finobacciLoop(int x){
-        int a = 1 , b = 1, c  = 0;
+    public static int finobacciLoop(int x) {
+        int a = 1, b = 1;
 
-        x += 3;
 
-        for (;x>0;){
-            if (x != 0) {
-                c = a + b;
-                x--;
-            }
-            if (x != 0) {
-                a = c + b;
-                x--;
-            }
-            if (x != 0) {
-                b = a + c;
-                x--;
-            }
+        for (int i = 1; x > i ; i++) {
+
+            int c = a + b;
+            System.out.println(a*10 + " + " + b*10 + " = " + c*10 +" populasyon pound cinsinden");
+            a = b;
+            b = c;
         }
-        return max(a,b,c);
+
+        return b*10;
+
     }
 
-    public static int max(int x ,int b,int c){
-        int max = x;
-        max = b > x ? b : x ;
-        max = c > x ? c : x ;
-        max = c > b ? c : b ;
-        return max;
-    }
+
 
 }
