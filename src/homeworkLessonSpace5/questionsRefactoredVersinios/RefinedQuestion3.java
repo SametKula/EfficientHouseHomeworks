@@ -8,6 +8,15 @@ public class RefinedQuestion3 {
         run();
     }
 
+    private static void run() {
+        System.out.println("Welcome to calculater of weight2newton\nif you want to be exit just enter exit on place phase\n");
+
+        inputLoop();
+
+        System.out.println("thank your for using this app");
+    }
+
+
     public static double calculateGaravity(int weight, String place) {
         double newtonVal = weight * GRAVITY;
 
@@ -61,13 +70,6 @@ public class RefinedQuestion3 {
         }
     }
 
-    private static void run() {
-        System.out.println("Welcome to calculater of weight2newton\nif you want to be exit just enter exit on place phase\n");
-
-        inputLoop();
-
-        System.out.println("thank your for using this app");
-    }
 
 
 }
