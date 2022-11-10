@@ -8,14 +8,22 @@ public class Question6 {
     public static void run(){
         java.util.Scanner kb = new java.util.Scanner(System.in);
 
-        System.out.print("enter your days: ");
-        int days = kb.nextInt();
+        System.out.println("welcome to population calculator (if you want to exit enter 0)");
+        while(true){
+            System.out.print("enter your days: ");
+            int days = kb.nextInt();
 
-        System.out.print("enter your entity's size: ");
-        int size = kb.nextInt();
+            System.out.print("enter your entity's size: ");
+            int size = kb.nextInt();
+
+            if (size == 0 | days == 0){
+                System.out.println("thanks for using this app <3");
+                break;
+            }
 
 
-        displayIncrasePopulation(days , size);
+            displayIncrasePopulation(days , size);
+        }
     }
 
     public static void displayIncrasePopulation(int loopTimes , int size) {

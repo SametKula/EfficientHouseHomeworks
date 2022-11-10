@@ -9,7 +9,7 @@ public class RefinedQuestion2 {
 
         String rgbPalette = rgbInput();
 
-        displayIsValid(rgbPalette);
+        displayValidPattern(rgbPalette);
 
     }
 
@@ -32,14 +32,13 @@ public class RefinedQuestion2 {
                 continue;
             }
 
-
             previousChar = temp;
             input = input.concat(temp.toUpperCase().trim());
         }
         return input;
     }
 
-    public static void displayIsValid(String input) {
+    public static void displayValidPattern(String input) {
         System.out.printf("The pallet which one the your entered is Valid  and your pattern is %s",input);
     }
 
