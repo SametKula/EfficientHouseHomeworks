@@ -18,7 +18,9 @@ public class RefinedQuestion3 {
     }
 
     public static void displayGravity(int val, String place) {
-        System.out.printf("%nyour newton on %s is : %.2f %n%n", place.toLowerCase(), calculateGaravity(val, place));
+        double lastCalculatedNewton = calculateGaravity(val, place);
+
+        System.out.printf("%nyour newton on %s is : %.2f %n%n", place, lastCalculatedNewton);
 
     }
 
@@ -30,15 +32,14 @@ public class RefinedQuestion3 {
             String place;
             int count = 5, weight;
 
-
             System.out.print("enter your want to compute place: ");
             while (true) {
-                place = kb.next().trim();
+                place = kb.next().trim().toLowerCase();
 
                 if (place.equalsIgnoreCase("exit"))
                     break EXIT_MAIN_LOOP;
 
-                if (place.equalsIgnoreCase("moon") || place.equalsIgnoreCase("earth"))
+                if (place.equals("moon") || place.equals("earth"))
                     break;
 
                 System.out.println("please enter moon or earth");
@@ -61,7 +62,6 @@ public class RefinedQuestion3 {
     }
 
     private static void run() {
-
         System.out.println("Welcome to calculater of weight2newton\nif you want to be exit just enter exit on place phase\n");
 
         inputLoop();
