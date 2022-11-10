@@ -2,14 +2,14 @@ package homeworkLessonSpace5.questionsRefactoredVersinios;
 
 
 public class RefinedQuestion3 {
-    public static final double GRAVITY = 9.81;
+    public static final double GRAVITY = 0.981;
 
     public static void main(String[] args) {
         run();
     }
 
-    public static double calculateGaravity(int val, String place) {
-        double newtonVal = val * GRAVITY / 10;
+    public static double calculateGaravity(int weight, String place) {
+        double newtonVal = weight * GRAVITY;
 
         if (place.equalsIgnoreCase("moon"))
             return newtonVal / 6;
@@ -27,18 +27,18 @@ public class RefinedQuestion3 {
 
         EXIT_MAIN_LOOP:
         while (true) {
+            String place;
+            int count = 5, weight;
+
+
             System.out.print("enter your want to compute place: ");
-            String input1;
-            int count = 5;
-
-
             while (true) {
-                input1 = kb.next().trim();
+                place = kb.next().trim();
 
-                if (input1.equalsIgnoreCase("exit"))
+                if (place.equalsIgnoreCase("exit"))
                     break EXIT_MAIN_LOOP;
 
-                if (input1.equalsIgnoreCase("moon") || input1.equalsIgnoreCase("earth"))
+                if (place.equalsIgnoreCase("moon") || place.equalsIgnoreCase("earth"))
                     break;
 
                 System.out.println("please enter moon or earth");
@@ -54,9 +54,9 @@ public class RefinedQuestion3 {
             }
 
             System.out.print("enter the thing weight: ");
-            int input2 = kb.nextInt();
+            weight = kb.nextInt();
 
-            displayGravity(input2, input1);
+            displayGravity(weight, place);
         }
     }
 
