@@ -39,7 +39,7 @@ public class RefinedQuestion3 {
         EXIT_MAIN_LOOP:
         while (true) {
             String place;
-            int count = 5, weight;
+            int weight, count = 5;
 
             System.out.print("enter your want to compute place: ");
             while (true) {
