@@ -39,12 +39,14 @@ public class RefinedQuestion5 {
     }
 
     public static int willPassedMonth(double productDepth, int payableMoney) {
-        if (0 > payableMoney - (productDepth * 15 / 1000))
+        double bankPay = 0.015;
+
+        if (0 > payableMoney - productDepth * bankPay)
             return 0;
 
         int month = 1;
         while (productDepth > payableMoney) {
-            productDepth -= payableMoney - (productDepth * 15 / 1000);
+            productDepth -= payableMoney - productDepth * bankPay;
             month++;
         }
 

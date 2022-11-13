@@ -44,7 +44,7 @@ public class RefinedQuestion1 {
             lastGuess = guess;
             r = n / guess;
             guess = (guess + r) / 2;
-        } while ((lastGuess - guess) >= 0.01);
+        } while (lastGuess - guess >= 0.01);
 
         return guess;
     }
