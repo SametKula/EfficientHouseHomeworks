@@ -13,7 +13,7 @@ public class RefinedQuestion2 {
 
     }
 
-    public static String rgbInput( ){
+    public static String rgbInput(){//parameter
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
 
         String input = "", temp ,previousChar = " ";
@@ -22,18 +22,18 @@ public class RefinedQuestion2 {
             System.out.print("enter your palette letter: ");
             temp = keyboard.next().trim();
 
-            if (temp.equalsIgnoreCase(previousChar)){
+           /* if (temp.equalsIgnoreCase(previousChar)){
                 System.out.println("you can't enter previous one");
                 continue;
             }
 
             if (!(temp.equalsIgnoreCase("R") || temp.equalsIgnoreCase("G") || temp.equalsIgnoreCase("B"))) {
-                System.out.println("please use only R G B chars");
+                System.out.println("please use only R G B letter");
                 continue;
-            }
+            }*/
 
             previousChar = temp;
-            input = input.concat(temp.toUpperCase().trim());
+            input = input.concat(temp.toUpperCase().trim());// açıklama eksiği
         }
         return input;
     }

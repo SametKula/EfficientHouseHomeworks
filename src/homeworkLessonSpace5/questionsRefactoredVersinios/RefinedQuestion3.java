@@ -5,6 +5,7 @@ public class RefinedQuestion3 {
     public static final double GRAVITY = 0.981;
 
     public static void main(String[] args) {
+
         run();
     }
 
@@ -39,7 +40,7 @@ public class RefinedQuestion3 {
         EXIT_MAIN_LOOP:
         while (true) {
             String place;
-            int weight, count = 5;
+            int weight;
 
             System.out.print("enter your want to compute place: ");
             while (true) {
@@ -52,12 +53,6 @@ public class RefinedQuestion3 {
                     break;
 
                 System.out.println("please enter moon or earth");
-
-                count--;
-                if (count == 0) {
-                    System.out.println("\nif you want exit just enter exit\n");
-                    count += 5;
-                }
 
                 System.out.print("enter your want to compute place: ");
 
