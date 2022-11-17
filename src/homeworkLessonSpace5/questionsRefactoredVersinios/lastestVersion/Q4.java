@@ -26,17 +26,17 @@ public class Q4 {
             double willCost = getCostUpByInflation(productCost, year, inflation);
             double willDoesntBuy = 100 * (willCost - productCost) / productCost;
 
-            System.out.printf("the product geting %f on these years %d , and you dont buy %.0f ", willCost, year, willDoesntBuy);
+            System.out.printf("the product geting %f on these years : %d , and you dont buy %.0f ", willCost, year, willDoesntBuy);
         }
 
     }
 
-    public static double getCostUpByInflation(double product, int year, double inflation) {
+    public static double getCostUpByInflation(double productCost, int year, double inflation) {
         while (year > 0) {
-            product += product * inflation;
+            productCost += productCost * inflation;
             year--;
         }
 
-        return product;
+        return productCost;
     }
 }
