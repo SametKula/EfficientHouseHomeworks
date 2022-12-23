@@ -6,7 +6,7 @@ public class Question1 {
     }
 
     public static void run(){
-        starMaker(6);
+        starMaker(25);
     }
 
     public static void starMaker(int x){
