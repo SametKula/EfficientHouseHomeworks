@@ -6,7 +6,7 @@ public class Question4 {
     }
 
     public static void run(){
-        starLeader(100,7);
+        starLeader(200,20);
     }
 
     public static void starLeader(int height ,int width){
@@ -16,13 +16,13 @@ public class Question4 {
             System.out.print("/");
             for (;i < count;i++)
                 System.out.print(" ");
-            System.out.print("*");
+            System.out.print(":D");
             for (i += 2;i <= width;i++)
                 System.out.print(" ");
             System.out.print("/\n");
             if (count == width - 1)
                 b = false;
-            if (count == 1)
+            if (count == 0)
                 b = true;
 
             if (b)
