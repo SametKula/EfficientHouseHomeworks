@@ -5,21 +5,28 @@ public class Question4 {
         run();
     }
 
-    public static void run(){
-        starLeader(200,20);
+    public static void run() {
+        starLeader(200, 20);
     }
 
-    public static void starLeader(int height ,int width){
+    public static void starLeader(int height, int width) {
         boolean b = true;
-        for (int count = 0 , heightControl = 0; heightControl <= height ; heightControl++ ){
+
+        for (int count = 0, heightControl = 0; heightControl <= height; heightControl++) {
             int i = 0;
+
             System.out.print("/");
-            for (;i < count;i++)
+
+            for (; i < count; i++)
                 System.out.print(" ");
-            System.out.print(":D");
-            for (i += 2;i <= width;i++)
+
+            System.out.print("Efficent House");
+
+            for (i += 2; i <= width; i++)
                 System.out.print(" ");
+
             System.out.print("/\n");
+
             if (count == width - 1)
                 b = false;
             if (count == 0)

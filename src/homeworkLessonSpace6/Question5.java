@@ -6,21 +6,30 @@ public class Question5 {
     }
 
     public static void run() {
-
+        System.out.println(toplamAsallari(10002));
     }
 
     public static String toplamAsallari(int x) {
         if (x % 2 != 0)
             return "çift sayi gir";
-        if (x < 4)
-            return "daha büyük sayı girin";
+        if (x <= 4)
+            return x == 4 ? "|| 2 + 2" : "daha büyük sayı girin";
 
-        for (int a = 3, b = x - 1; a < b; a += 2, b-=2){
+        String sumrary = "";
+
+        for (int i = 3; i <= x / 2; i += 2) {
+            if (!isPrime(i))
+                continue;
+            for (int j = x - 3; j >= x / 2; j -= 2) {
+                if (!isPrime(j))
+                    continue;
+                if (i + j == x)
+                    sumrary = sumrary.concat("||" + i + "+" + j);
+            }
 
 
         }
-
-            return " ";
+        return sumrary;
     }
 
     public static boolean isPrime(int x) {
