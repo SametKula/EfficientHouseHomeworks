@@ -6,7 +6,7 @@ public class Question4 {
     }
 
     public static void run() {
-        starLeader(200, 20);
+        starLeader(1000, 7);
     }
 
     public static void starLeader(int height, int width) {
@@ -15,19 +15,19 @@ public class Question4 {
         for (int count = 0, heightControl = 0; heightControl <= height; heightControl++) {
             int i = 0;
 
-            System.out.print("/");
+            System.out.print("|");
 
-            for (; i < count; i++)
+            for (; i < count & width > i; i++)
                 System.out.print(" ");
 
-            System.out.print("Efficent House");
+            System.out.print("*");
 
             for (i += 2; i <= width; i++)
                 System.out.print(" ");
 
-            System.out.print("/\n");
+            System.out.print("|\n");
 
-            if (count == width - 1)
+            if (count == width - 1 )
                 b = false;
             if (count == 0)
                 b = true;
