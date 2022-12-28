@@ -6,11 +6,39 @@ public class OopExercises {
 
 class App {
     public static void main(String[] args) {
+        run();
+    }
+    public static void run(){
+        java.util.Scanner kb = new java.util.Scanner(System.in);
+        Book book = new Book();
+        System.out.println("enter your commands (help for type help)");
+        while (true){
+            System.out.print(".../");
+            String input = kb.next();
 
+            switch (input){
+                case "help","HELP"->
+                    Library.displayLibraryHelp();
+                case "s"->
+                    Library.getStatusOfBook(book);
+                case "n"-> {
+                    System.out.print("enter your wanted name");
+                    String name = kb.next();
+                    Library.nameAdjuster(book, name);
+                }
+
+            }
+        }
     }
 }
 
 class Library {
+    public static void displayLibraryHelp(){
+        System.out.println("its a help text for commands");
+    }
+    public static void getStatusOfBook(Book book){
+        System.out.printf("name:%s%npaperCount:%d%nisWriterAlive:%b%nrating:%d%nwhatTimesRead:%d%nisAvailable:%b%nfor rent to %02d.%02d.%d%n",book.name,book.paperCount,book.isWriterAlive,book.rating,book.whatTimesRead,book.isAvailable,book.date.day,book.date.month,book.date.year);
+    }
     public static void nameAdjuster(Book book, String name) {
         book.name = name;
     }
@@ -19,7 +47,7 @@ class Library {
         book.rating += incraserNumber;
     }
 
-    public static void nameAdjuster(Book book, int paperCount) {
+    public static void paperCountAdjuster(Book book, int paperCount) {
         book.paperCount = paperCount;
     }
 
@@ -28,12 +56,15 @@ class Library {
         book.isWriterAlive = !book.isWriterAlive;
     }
 
-    public static int readedCount(Book book) {
-        return book.whatTimesRead;
+    public static void displayReadedCount(Book book) {
+        System.out.printf("Readed count is :%d",book.whatTimesRead);
     }
 
     public static void adjustReadedCount(Book book, int readedCount) {
         book.whatTimesRead = readedCount;
+    }
+    public static void incraseReadedCountByOne(Book book){
+        book.whatTimesRead++;
     }
 
     public static void rentBook(Book book, int day, int month, int year) {
@@ -47,6 +78,7 @@ class Library {
         if (DateValidator.isDateValid(newDate)) {
             System.out.println("your rent proces is done have a nice day");
             book.date = newDate;
+            incraseReadedCountByOne(book);
         } else
             System.out.println("please enter valid date");
 
