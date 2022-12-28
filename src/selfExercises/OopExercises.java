@@ -42,4 +42,35 @@ class Book {
     public boolean isWriterAlive;
     public int rating;
     public int whatTimesRead;
+    public boolean isAvailable;
+    public String date;
+}
+
+class Date {
+    public int day;
+    public int month;
+    public int year;
+
+}
+class DateValidator{
+    public static boolean isDateValid(Date date){
+        return date.day >= 1 && date.day <= 31 && 1 <= date.month && date.month <= 12 && date.day <= giveRealDay(date);
+    }
+
+    public static int giveRealDay(Date date){
+        int day = 31;
+
+        switch (date.month) {
+            case 4, 6, 9, 11 -> day = 30;
+            case 2 -> {
+                day = 29;
+                if (isLeapYear(date))
+                    day++;
+            }
+        }
+        return day;
+    }
+    public static boolean isLeapYear(Date date){
+        return date.year % 4 == 0 && date.year % 100 != 0 || date.year % 400 == 0;
+    }
 }
