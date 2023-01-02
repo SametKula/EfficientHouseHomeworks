@@ -8,22 +8,22 @@ public class Polidrome {
 }
 class PolidromeUtil {
     public static int countPolidrome(int number){
-        long temp = palidrome(number) ;
+        long temp = number ;
         int count = 1;
         while (!isPolidrome(temp)){
             count++;
-            temp = palidrome(temp);
+            temp = beforePalidrome(temp);
         }
 
         return count;
     }
 
     public static boolean isPolidrome(long number){
-        long palidromedNumber = palidrome(number);
+        long palidromedNumber = beforePalidrome(number);
 
         return reverseNumber(palidromedNumber) == palidromedNumber;
     }
-    public static long palidrome(long number){
+    public static long beforePalidrome(long number){
         return number + reverseNumber(number);
     }
     public static long reverseNumber(long x){
