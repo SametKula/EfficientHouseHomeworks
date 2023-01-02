@@ -6,7 +6,7 @@ public class Question4 {
     }
 
     public static void run() {
-        starLeader(1000, 7);
+        starLeader(1000, 20);
     }
 
     public static void starLeader(int height, int width) {
