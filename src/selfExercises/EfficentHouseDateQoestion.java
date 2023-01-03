@@ -2,16 +2,39 @@ package selfExercises;
 
 public class EfficentHouseDateQoestion {
     public static void main(String[] args) {
+        Dates date1 ,date2;
+
+        date1 = new Dates();
+        date2 = new Dates();
+
+        date1.day = 9;
+        date1.month = 12;
+        date1.year = 2022;
+
+        date2.day = 9;
+        date2.month = 12;
+        date2.year = 2022;
+
+        DateUtil.daysFounder(date1,date2);
+
+
+    }
+
+
+}
+
+class DateUtil {
+    public static void runFirstMethod(){
         Dates date ;
         date = new Dates();
 
-        date.day = 22;
-        date.month = 9;
+        date.day = 9;
+        date.month = 12;
         date.year = 2022;
 
         int count = 0;
 
-        while (!(date.day >= 10 && date.month >= 6 && date.year >= 2027)){
+        while (!(date.day >= 10 && date.day < 21 && date.month >= 1 && date.year >= 2027)){
             date.day += 11;
             if (date.day > DateUtil.mounthsDays(date)){
                 date.day -= DateUtil.mounthsDays(date);
@@ -27,16 +50,38 @@ public class EfficentHouseDateQoestion {
 
         System.out.println(count);
 
-
-
-
-
     }
+    public static int daysFounder(Dates date1 ,Dates date2){
+        Dates maxDate = date1 , minDate = date2;
+        int resultDays = 0;
+
+        if (date1.year - date2.year != MathUtil.absolute(date1.year - date2.year)){
+            maxDate = date2;
+            minDate = date1;
+        }
+
+        int yearCount = 0 , leapYearDays = 0;
+
+        for(; minDate.year != maxDate.year; yearCount++, minDate.year++)
+            if(isLeapYear(minDate.year))
+                leapYearDays++;
+
+        resultDays += yearCount*365 + leapYearDays;
+
+        if(maxDate.month - minDate.month != MathUtil.absolute(maxDate.month - minDate.month)){
+            maxDate = date1;
+            minDate = date2;
+        }
+
+        int monthCount = 0;
+        for( ; minDate.month != maxDate.month; minDate.month++)
+            monthCount += DateUtil.mounthsDays(minDate);
+
+        resultDays += monthCount + MathUtil.absolute(maxDate.day - minDate.day);
 
 
-}
-
-class DateUtil {
+        return resultDays;
+    }
     public static boolean isDateValid(Dates date) {
         return date.day >= 1 && date.day <= 31 && 1 <= date.month && date.month <= 12 && date.day <= mounthsDays(date);
     }
@@ -56,6 +101,11 @@ class DateUtil {
     }
     public static boolean isLeapYear(int year) {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+}
+class MathUtil {
+    public static int absolute(int x){
+        return x > 0 ? x : x * -1;
     }
 }
 class Dates {
