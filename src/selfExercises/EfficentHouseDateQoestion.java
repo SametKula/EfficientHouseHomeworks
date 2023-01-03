@@ -11,11 +11,11 @@ public class EfficentHouseDateQoestion {
         date1.month = 12;
         date1.year = 2022;
 
-        date2.day = 9;
-        date2.month = 12;
-        date2.year = 2022;
+        date2.day = 21;
+        date2.month = 1;
+        date2.year = 2027;
 
-        DateUtil.daysFounder(date1,date2);
+        System.out.printf("days: %d ------ hw : %d",DateUtil.runSecondMethod(date1,date2),DateUtil.runSecondMethod(date1,date2)/11);
 
 
     }
@@ -51,7 +51,7 @@ class DateUtil {
         System.out.println(count);
 
     }
-    public static int daysFounder(Dates date1 ,Dates date2){
+    public static int runSecondMethod(Dates date1 , Dates date2){
         Dates maxDate = date1 , minDate = date2;
         int resultDays = 0;
 
