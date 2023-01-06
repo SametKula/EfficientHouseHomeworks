@@ -15,7 +15,9 @@ public class EfficentHouseDateQoestion {
         date2.month = 1;
         date2.year = 2027;
 
-        System.out.printf("days: %d ------ hw : %d",DateUtil.runSecondMethod(date1,date2),DateUtil.runSecondMethod(date1,date2)/11);
+        int asx = DateUtil.runSecondMethod(date1,date2);
+        System.out.printf("days: %d",asx);
+        System.out.printf("hm: %d%n",asx/11);
 
 
     }
@@ -67,18 +69,19 @@ class DateUtil {
                 leapYearDays++;
 
         resultDays += yearCount*365 + leapYearDays;
+        int fixer = 1;
 
         if(maxDate.month - minDate.month != MathUtil.absolute(maxDate.month - minDate.month)){
             maxDate = date1;
             minDate = date2;
+            fixer = -1;
         }
 
         int monthCount = 0;
         for( ; minDate.month != maxDate.month; minDate.month++)
             monthCount += DateUtil.mounthsDays(minDate);
 
-        resultDays += monthCount + MathUtil.absolute(maxDate.day - minDate.day);
-
+        resultDays += fixer*(monthCount + MathUtil.absolute(maxDate.day - minDate.day));
 
         return resultDays;
     }
