@@ -7,6 +7,7 @@ public class OopExercises {
 class App {
     public static void main(String[] args) {
         run();
+
     }
     public static void run(){
         java.util.Scanner kb = new java.util.Scanner(System.in);
