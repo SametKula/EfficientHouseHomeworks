@@ -6,7 +6,7 @@ public class OopExercises {
 
 class App {
     public static void main(String[] args) {
-        run();
+
 
     }
     public static void run(){
@@ -69,8 +69,7 @@ class Library {
     }
 
     public static void rentBook(Book book, int day, int month, int year) {
-        Date newDate;
-        newDate = new Date();
+        Date newDate = new Date();
 
         newDate.day = day;
         newDate.month = month;
@@ -100,6 +99,10 @@ class Date {
     public int day;
     public int month;
     public int year;
+
+    public String toString(){
+        return "bu bir overloadingdir";
+    }
 
 }
 
