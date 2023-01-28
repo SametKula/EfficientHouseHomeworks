@@ -84,8 +84,10 @@ public class PossibilitiesUtil {
 
 
     //yasaklanan java kullanimi
-
-    public static double diceThing(int loopTimes, java.util.Random rd, int... ints){
+/**
+* this method give odds ratio of given numbers possiblates to all sequence
+*/
+    public static double diceOddsRatio(int loopTimes, java.util.Random rd, int... ints){
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
