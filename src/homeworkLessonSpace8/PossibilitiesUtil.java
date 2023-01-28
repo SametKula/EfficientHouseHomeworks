@@ -95,16 +95,18 @@ public class PossibilitiesUtil {
         return count / (double)loopTimes;
     }
 
+
+    //yasaklanan java kullanimi
     public static double diceThing(int loopTimes, java.util.Random rd, int... x){
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
             int temp = rd.nextInt(6) + 1;
 
-            for (int a : x){
+            for (int a : x)
                 if (a == temp)
                     count++;
-            }
+
 
         }
 
