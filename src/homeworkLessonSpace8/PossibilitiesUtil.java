@@ -97,6 +97,7 @@ public class PossibilitiesUtil {
 
 
     //yasaklanan java kullanimi
+
     public static double diceThing(int loopTimes, java.util.Random rd, int... x){
         int count = 0;
 
