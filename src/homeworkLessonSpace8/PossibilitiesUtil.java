@@ -68,6 +68,7 @@ public class PossibilitiesUtil {
 
         return count / (double)loopTimes;
     }
+
     public static double diceChance (int a, int b, int c, int d, int f, int g, int loopTimes, java.util.Random rd ){
         int count = 0;
 
@@ -80,6 +81,18 @@ public class PossibilitiesUtil {
         }
 
         return count / (double)loopTimes;
+    }
+    public static int throwDice (java.util.Random rd){
+        return rd.nextInt(6) + 1;
+    }
+    public static double twoDiceChance (int looptimes ,java.util.Random rd) {
+        int count = 0;
+
+        for (int i = 0; i < looptimes; i++)
+            if (throwDice(rd) == throwDice(rd))
+                count++;
+
+        return count / (double)looptimes;
     }
 
 
@@ -98,6 +111,25 @@ public class PossibilitiesUtil {
                     count++;
 
         }
+
+        return count / (double)loopTimes;
+    }
+
+    public static double coinFlipRatio(int loopTimes, String coinFace, java.util.Random rd) {
+        int count = 0;
+        boolean coin = false;
+
+        if (coinFace.equalsIgnoreCase("heads")) {
+            coin = true;
+        }
+        else if (!coinFace.equalsIgnoreCase("tails")) {
+            System.err.println("you should use heads or tails");
+            return 0;
+        }
+
+        for (int i = 0; i < loopTimes; i++)
+            if (coin == rd.nextBoolean())
+                count++;
 
         return count / (double)loopTimes;
     }
