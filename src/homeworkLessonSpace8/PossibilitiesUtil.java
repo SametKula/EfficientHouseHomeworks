@@ -7,7 +7,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp)
                 count++;
@@ -20,7 +20,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp || b == temp)
                 count++;
@@ -33,7 +33,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp || b == temp || c == temp)
                 count++;
@@ -46,7 +46,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp || b == temp || c == temp || d == temp)
                 count++;
@@ -59,7 +59,7 @@ public class PossibilitiesUtil {
          int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp || b == temp || c == temp || d == temp || f == temp)
                 count++;
@@ -73,7 +73,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             if (a == temp || b == temp || c == temp || d == temp || f == temp || g == temp)
                 count++;
@@ -104,7 +104,7 @@ public class PossibilitiesUtil {
         int count = 0;
 
         for (int i = 0; i < loopTimes; i++){
-            int temp = rd.nextInt(6) + 1;
+            int temp = throwDice(rd);
 
             for (int i1 : ints)
                 if (i1 == temp)
@@ -113,6 +113,10 @@ public class PossibilitiesUtil {
         }
 
         return count / (double)loopTimes;
+    }
+
+    public static String doCoinFlip (java.util.Random rd){
+        return rd.nextBoolean() ? "heads" : "tails";
     }
 
     public static double coinFlipRatio(int loopTimes, String coinFace, java.util.Random rd) {
@@ -128,7 +132,7 @@ public class PossibilitiesUtil {
         }
 
         for (int i = 0; i < loopTimes; i++)
-            if (coin == rd.nextBoolean())
+            if (doCoinFlip(rd).equalsIgnoreCase(coinFace))
                 count++;
 
         return count / (double)loopTimes;
