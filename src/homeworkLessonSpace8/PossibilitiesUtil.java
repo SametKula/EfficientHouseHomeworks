@@ -105,33 +105,33 @@ public class PossibilitiesUtil {
 
         for (int i = 0; i < loopTimes; i++){
             int temp = throwDice(rd);
+/*
 
             for (int j : ints)
                 if (j == temp)
                     count++;
+*/
+
+            for(int k = 0; k < ints.length; k++)
+                if (ints[k] == temp)
+                    count++;
 
         }
-
         return count / (double)loopTimes;
     }
 
     public static String doCoinFlip (java.util.Random rd){
         return rd.nextBoolean() ? "heads" : "tails";
     }
-
     public static double coinFlipRatio(int loopTimes, String coinFace, java.util.Random rd) {
-        int count = 0;
-
         if (!coinFace.equalsIgnoreCase("tails") ||  !coinFace.equalsIgnoreCase("heads"))
-            System.err.println("you should use heads or tails");
+            System.err.println("you should look for heads or tails");
 
-
+        int count = 0;
         for (int i = 0; i < loopTimes; i++)
             if (doCoinFlip(rd).equalsIgnoreCase(coinFace))
                 count++;
 
         return count / (double)loopTimes;
     }
-
-
 }
