@@ -103,20 +103,17 @@ public class PossibilitiesUtil {
     public static double diceOddsRatio(int loopTimes, java.util.Random rd, int... ints){
         int count = 0;
 
-        for (int i = 0; i < loopTimes; i++){
-            int temp = throwDice(rd);
+        for (int i = 0; i < loopTimes; i++)
+            for(int k = 0 ,dice = throwDice(rd); k < ints.length; k++)
+                if (ints[k] == dice)
+                    count++;
+
 /*
 
             for (int j : ints)
                 if (j == temp)
                     count++;
 */
-
-            for(int k = 0; k < ints.length; k++)
-                if (ints[k] == temp)
-                    count++;
-
-        }
         return count / (double)loopTimes;
     }
 
