@@ -126,7 +126,7 @@ public class PossibilitiesUtil {
     }
     public static double multipleCoinFlip (java.util.Random rd, int coinFlipTimes , int coinInSameTime,String wantedCoinFace){
         int wantedCoin = 0;
-        boolean trueCoinFace = wantedCoinFace.equals("heads");
+
 
         if (coinValidator(wantedCoinFace).equals("invalid"))
             return 0;
