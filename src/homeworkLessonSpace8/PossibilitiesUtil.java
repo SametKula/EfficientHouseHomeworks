@@ -124,22 +124,23 @@ public class PossibilitiesUtil {
             return "tails";
         return "invalid";
     }
+    public static boolean isCoinInputValid (String input){
+        return input.equalsIgnoreCase("tails") || input.equalsIgnoreCase("heads");
+    }
     public static double multipleCoinFlip (java.util.Random rd, int coinFlipTimes , int coinInSameTime,String wantedCoinFace){
         int wantedCoin = 0;
 
-
-        if (coinValidator(wantedCoinFace).equals("invalid"))
+        if (isCoinInputValid(wantedCoinFace))
             return 0;
         else
-            wantedCoinFace = coinValidator(wantedCoinFace);
+            wantedCoinFace = wantedCoinFace.toLowerCase();
 
         for (int i = 0; i < coinFlipTimes; i++)
             for (int j = 0; j < coinInSameTime; j++)
                 if (flipCoin(rd).equals(wantedCoinFace))
                     wantedCoin++;
 
-
-        return wantedCoin / (double)coinFlipTimes*coinInSameTime;
+        return wantedCoin / (double) (coinFlipTimes * coinInSameTime);
     }
 
 
@@ -154,7 +155,7 @@ public class PossibilitiesUtil {
         for (int i = 0; i < loopTimes; i++)
             for (int k = 0, throwedDice = throwDice(rd); k < ints.length; k++)
                 if (ints[k] == throwedDice)
-                    count++;
+                    count += 1;
 
         return count / (double) loopTimes;
     }
