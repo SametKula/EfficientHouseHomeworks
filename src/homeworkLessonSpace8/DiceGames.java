@@ -24,7 +24,7 @@ public class DiceGames {
     }
 
     public static void gameStaff(Player p1, Player p2, java.util.Random rd) {
-        int count = 0 , totalGames =0;
+        int count = 0 , totalRaunds =0;
         while (true) {
             p1.roll(rd);
             p2.roll(rd);
@@ -51,22 +51,24 @@ public class DiceGames {
 
             if (p1.win || p2.win){
                 if (p1.win)
-                    count++;
+                    p1.winScore++;
+                else
+                    p2.winScore++;
 
                 p1.playerReset();
                 p2.playerReset();
 
+                if (++totalRaunds == 1000)
+                    break;
             }
 
 
-            if (totalGames > 1000)
-                break;
 
-            totalGames++;
+
 
 
         }
-        System.out.println(count + "  " + totalGames);
+        System.out.println(p2.winScore + "  " + totalRaunds);
 
     }
     public static void displayScoreboard(Player p1, Player p2){
@@ -85,6 +87,7 @@ public class DiceGames {
 }
 
 class Player {
+    public int winScore;
     public int score;
     public boolean win;
 
@@ -103,7 +106,7 @@ class Player {
             this.score += dice;
     }
     public void playerReset(){
-        this.win =false;
+        this.win = false;
         this.score = 0;
     }
 
