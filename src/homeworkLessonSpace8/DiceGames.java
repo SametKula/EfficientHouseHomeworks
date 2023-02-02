@@ -37,24 +37,26 @@ public class DiceGames {
                     minp.roll(rd);
                     if (minp.score > maxp.score) {
                         minp.win = true;
-                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+                        System.out.printf("win condution place1  %s  ==== %d  ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
                     }
                     else if (minp.score == maxp.score) {
                         minp.win = true;
                         maxp.win = true;
-                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
-
+                        System.out.printf("win condution place2  %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
                     } else if (maxp.score > minp.score && maxp.score > 20){
                         maxp.win = true;
-                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+                        System.out.printf("win condution place3  %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
+
                     }
                 }else{
                     maxp.win = true;
-                    System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+                    System.out.printf("win condution place4 %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
 
                 }
 
-            System.out.printf("player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+            System.out.printf("%s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
+
+
 
 
 
@@ -69,7 +71,7 @@ public class DiceGames {
                     break;
 
             } else if (maxp.win) {
-                System.out.println("the " + maxp.pName + " is winner game will end if want to contunuie pres \"play\" you play one more game if you enter another thin the game will end %n input:  ");
+                System.out.println("the " + maxp.pName + " is winner game will end if want to contunuie pres \"play\" you play one more game if you enter another thin the game will end \n input:  ");
                 java.util.Scanner kb = new java.util.Scanner(System.in);
                 if (kb.nextLine().equalsIgnoreCase("play")) {
                     p1.score = 0;
