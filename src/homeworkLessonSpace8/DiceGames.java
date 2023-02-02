@@ -7,7 +7,7 @@ public class DiceGames {
     public static void game() {
         java.util.Random rd = new java.util.Random();
 
-        Player player = new Player("player");
+        Player player = new Player("player  ");
         Player computer = new Player("computer");
 
         boolean gameBegginer = rd.nextBoolean();
@@ -37,25 +37,22 @@ public class DiceGames {
                     minp.roll(rd);
                     if (minp.score > maxp.score) {
                         minp.win = true;
-                        System.out.printf("win condution place1  %s  ==== %d  ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
+                        displayScoreboard(maxp,minp);
                     }
                     else if (minp.score == maxp.score) {
                         minp.win = true;
                         maxp.win = true;
-                        System.out.printf("win condution place2  %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
+                        displayScoreboard(maxp,minp);
                     } else if (maxp.score > minp.score && maxp.score > 20){
                         maxp.win = true;
-                        System.out.printf("win condution place3  %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
-
+                        displayScoreboard(maxp,minp);
                     }
                 }else{
                     maxp.win = true;
-                    System.out.printf("win condution place4 %s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
-
+                    displayScoreboard(maxp,minp);
                 }
 
-            System.out.printf("%s  ==== %d ==== and %s ==== %d ====%n",maxp.pName, maxp.score,minp.pName, minp.score);
-
+            displayScoreboard(maxp,minp);
 
 
 
@@ -88,7 +85,11 @@ public class DiceGames {
 
 
     }
-
+    public static void displayScoreboard(Player p1, Player p2){
+        System.out.format("+----------+-------+------+----------+-------+------+%n");
+        System.out.format("|%s  |%d     |%b   |%s    |%d      |%b     |%n",p1.pName,p1.score,p1.win,p2.pName,p2.score,p2.win);
+        System.out.format("+----------+-------+------+----------+-------+------+%n");
+    }
     public static Player maxPlayer(Player p1, Player p2) {
         return p1.score > p2.score ? p1 : p2;
     }
