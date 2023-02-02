@@ -57,6 +57,7 @@ public class DiceGames {
             System.out.printf("player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
 
 
+
             if (maxp.win && minp.win) {
                 System.out.println("both palyer was won if want to contunie the game enter \"play\" if you enter a different thing you quit the game/ninput: ");
                 java.util.Scanner kb = new java.util.Scanner(System.in);
