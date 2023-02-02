@@ -35,15 +35,24 @@ public class DiceGames {
             if (maxp.score >= 20)
                 if (minp.score > maxp.score - 7) {
                     minp.roll(rd);
-                    if (minp.score > maxp.score)
+                    if (minp.score > maxp.score) {
                         minp.win = true;
+                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+                    }
                     else if (minp.score == maxp.score) {
                         minp.win = true;
                         maxp.win = true;
-                    } else
+                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+
+                    } else if (maxp.score > minp.score && maxp.score > 20){
                         maxp.win = true;
-                }else
+                        System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+                    }
+                }else{
                     maxp.win = true;
+                    System.out.printf("win condition fields player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
+
+                }
 
             System.out.printf("player's score ==== %d ==== and computer's score ==== %d ====%n", p1.score, p2.score);
 
