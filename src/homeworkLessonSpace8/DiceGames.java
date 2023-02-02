@@ -40,7 +40,7 @@ public class DiceGames {
                     else if (minp.score == maxp.score) {
                         minp.win = true;
                         maxp.win = true;
-                    } else if (maxp.score > minp.score && maxp.score > 20)
+                    } else
                         maxp.win = true;
                 }else
                     maxp.win = true;
@@ -59,9 +59,10 @@ public class DiceGames {
             }
 
 
-            if (++totalGames > 10)
+            if (totalGames > 1000)
                 break;
 
+            totalGames++;
 
 
         }
