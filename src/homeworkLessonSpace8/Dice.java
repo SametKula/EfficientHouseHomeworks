@@ -1,17 +1,18 @@
 package homeworkLessonSpace8;
 
 public class Dice {
-    public int previousValue ;
+    public int previousValue;
     public int diceValueUpOnTheFace;
 
-    public void roll(){
+    public void roll() {
         java.util.Random r = new java.util.Random();
 
         previousValue = diceValueUpOnTheFace;
 
         diceValueUpOnTheFace = r.nextInt(6) + 1;
     }
-    public int getDiceValueUpOnTheFace(){
+
+    public int getDiceValueUpOnTheFace() {
         return diceValueUpOnTheFace;
     }
 }
