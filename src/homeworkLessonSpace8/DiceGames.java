@@ -1,8 +1,6 @@
 package homeworkLessonSpace8;
 
 
-import java.util.Formatter;
-
 import static homeworkLessonSpace8.PossibilitiesUtil.*;
 
 public class DiceGames {
@@ -24,52 +22,47 @@ public class DiceGames {
 
 
     }
+    public static void gameStatusChecked(Player p1, Player p2, java.util.Random rd){
+        Player maxp = maxPlayer(p1, p2);
+        Player minp = minPlayer(p1, p2);
+
+        displayScoreboard(p1, p2);
+
+        if (maxp.getScore() >= 20) {
+            if (minp.getScore() < maxp.getScore() - 6) {
+                maxp.winRound();
+            } else {
+                minp.roll(rd);
+                if (minp.getScore() > maxp.getScore()) {
+                    minp.winRound();
+                } else {
+                    maxp.winRound();
+                }
+
+            }
+            maxp.resScore();
+            minp.resScore();
+        }
+    }
 
     public static void gameStaff(Player p1, Player p2, java.util.Random rd) {
-        int count = 0 , totalRaunds =0;
-        while (true) {
+        while (p1.getWinScore() != p2.getWinScore() || p1.getWinScore() <= 500){
             p1.roll(rd);
             p2.roll(rd);
 
-            Player maxp = maxPlayer(p1, p2);
-            Player minp = minPlayer(p1, p2);
+            gameStatusChecked(p1, p2, rd);
 
-            displayScoreboard(p1,p2);
-
-            if (maxp.getScore() >= 20){
-                if (minp.getScore() < maxp.getScore() - 6){
-                    maxp.winRound();
-                    maxp.resScore();
-                    minp.resScore();
-                }else {
-                    minp.roll(rd);
-                    if (minp.getScore() > maxp.getScore()){
-                        minp.winRound();
-                    }else {
-                        maxp.winRound();
-                    }
-                    maxp.resScore();
-                    minp.resScore();
-
-                }
-            }
-
-
-
-
-            if (p1.getWinScore() == 10 || p2.getWinScore() == 10)
-                break;
 
         }
-        displayScoreboard(p1,p2);
+        displayScoreboard(p1, p2);
 
     }
-    public static void displayScoreboard(Player p1, Player p2){
 
-
-        System.out.format("|%3s|%7d|%7d|%7s|%7d|%7d|%n",p1.pName,p1.getScore(),p1.getWinScore(),p2.pName,p2.getScore(),p2.getWinScore());
+    public static void displayScoreboard(Player p1, Player p2) {
+        System.out.format("|%3s|%7d|%7d|%7s|%7d|%7d|%n", p1.pName, p1.getScore(), p1.getWinScore(), p2.pName, p2.getScore(), p2.getWinScore());
         System.out.format("+--------+-------+-------+--------+-------+-------+%n");
     }
+
     public static Player maxPlayer(Player p1, Player p2) {
         return p1.getScore() > p2.getScore() ? p1 : p2;
     }
@@ -82,6 +75,9 @@ public class DiceGames {
 }
 
 class Player {
+    public static final String RED = "\033[0;31m";
+    public static final String GREEN = "\033[0;32m";   // GREEN
+    public static final String RESET = "\033[0m";  // Text Reset
     public String pName;
     private int winScore;
     private int score;
@@ -98,17 +94,23 @@ class Player {
         else
             this.score += dice;
     }
-    public void winRound(){
+
+    public void winRound() {
         this.winScore++;
+        System.out.print(GREEN);
         System.out.printf("%n %nThe %s won %n %n", this.pName);
+        System.out.printf(RESET);
     }
-    public int getWinScore(){
+
+    public int getWinScore() {
         return this.winScore;
     }
-    public int getScore(){
+
+    public int getScore() {
         return this.score;
     }
-    public void resScore(){
+
+    public void resScore() {
         this.score = 0;
     }
 
