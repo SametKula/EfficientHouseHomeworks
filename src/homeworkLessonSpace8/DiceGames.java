@@ -16,9 +16,9 @@ public class DiceGames {
 
 
         if (gameBegginer)
-            gameStaff(player, computer, rd);
+            gameRaundLoop(player, computer, rd);
         else
-            gameStaff(computer, player, rd);
+            gameRaundLoop(computer, player, rd);
 
 
     }
@@ -48,8 +48,8 @@ public class DiceGames {
         }
     }
 
-    public static void gameStaff(Player p1, Player p2, java.util.Random rd) {
-        while (p1.getWinScore() != p2.getWinScore() || p1.getWinScore() <= 500)
+    public static void gameRaundLoop(Player p1, Player p2, java.util.Random rd) {
+        while (p1.getWinScore() != p2.getWinScore() || p1.getWinScore() <= 1000)
             gameStatusChecked(p1, p2, rd);
 
         displayScoreboard(p1, p2);
@@ -57,8 +57,8 @@ public class DiceGames {
     }
 
     public static void displayScoreboard(Player p1, Player p2) {
-        System.out.format("|%3s|%7d|%7d|%7s|%7d|%7d|%n", p1.pName, p1.getScore(), p1.getWinScore(), p2.pName, p2.getScore(), p2.getWinScore());
-        System.out.format("+--------+-------+-------+--------+-------+-------+%n");
+        System.out.printf("|%3s|%7d|%7d|%7s|%7d|%7d|%n", p1.pName, p1.getScore(), p1.getWinScore(), p2.pName, p2.getScore(), p2.getWinScore());
+        System.out.printf("+--------+-------+-------+--------+-------+-------+%n");
     }
 
     public static Player maxPlayer(Player p1, Player p2) {
