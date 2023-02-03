@@ -23,6 +23,9 @@ public class DiceGames {
 
     }
     public static void gameStatusChecked(Player p1, Player p2, java.util.Random rd){
+        p1.roll(rd);
+        p2.roll(rd);
+
         Player maxp = maxPlayer(p1, p2);
         Player minp = minPlayer(p1, p2);
 
@@ -46,14 +49,9 @@ public class DiceGames {
     }
 
     public static void gameStaff(Player p1, Player p2, java.util.Random rd) {
-        while (p1.getWinScore() != p2.getWinScore() || p1.getWinScore() <= 500){
-            p1.roll(rd);
-            p2.roll(rd);
-
+        while (p1.getWinScore() != p2.getWinScore() || p1.getWinScore() <= 500)
             gameStatusChecked(p1, p2, rd);
 
-
-        }
         displayScoreboard(p1, p2);
 
     }
