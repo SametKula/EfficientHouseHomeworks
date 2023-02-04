@@ -73,20 +73,6 @@ public class PossibilitiesUtil {
         return count / (double) loopTimes;
     }
 
-    public static double diceChance(java.util.Random rd, int loopTimes, int a, int b, int c, int d, int f, int g) {
-
-        int count = 0;
-
-        for (int i = 0; i < loopTimes; i++) {
-            int temp = throwDice(rd);
-
-            if (a == temp || b == temp || c == temp || d == temp || f == temp || g == temp)
-                count++;
-
-        }
-
-        return count / (double) loopTimes;
-    }
 
     public static double twoDiceChance(int looptimes, java.util.Random rd) {
         int count = 0;

@@ -4,9 +4,7 @@ public class Dice {
     public int previousValue;
     public int diceValueUpOnTheFace;
 
-    public void roll() {
-        java.util.Random r = new java.util.Random();
-
+    public void roll(java.util.Random r ) {
         previousValue = diceValueUpOnTheFace;
 
         diceValueUpOnTheFace = r.nextInt(6) + 1;
