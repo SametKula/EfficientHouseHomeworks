@@ -33,15 +33,31 @@ public class OddsUtil {
     }
     public static double coinFlipRatios(int loopTime, java.util.Random r) {
         Coin coin = new Coin();
+
+        return coinFlip(loopTime,"tails",r,coin);
+    }
+    public static double coinFlip(int loopTimes,String wandtedCoinFace, java.util.Random r, Coin coin, boolean withCoinLogg) {
         int count = 0;
 
-        for (int i = 0; i < loopTime; i++){
+        if (!coin.isCoinReqValid(wandtedCoinFace))
+            return 0;
+
+        coin.coinsValue = coin.adjustmentCoinValue(wandtedCoinFace);
+
+        for (int i = 0; i < loopTimes; i++){
             coin.flipCoin(r);
-            if (coin.coinsValue.equals("tails"))
+            if (coin.coinsValue.equals(wandtedCoinFace))
                 count++;
-            System.out.printf("coin fliped and it's a %s%n", coin.coinsValue);
+
+            if (withCoinLogg)
+                System.out.printf("coin fliped and it's a %s%n", coin.coinsValue);
         }
 
-        return (double)count / loopTime;
+        return (double)count / loopTimes;
+    }
+    public static double coinFlipRatioWithLoggedFaces(int loopTimes,java.util.) {
+
+
+
     }
 }
