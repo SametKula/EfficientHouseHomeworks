@@ -28,6 +28,20 @@ public class OddsUtil {
             if(diceOne.getDiceValueUpOnTheFace() == diceTwo.getDiceValueUpOnTheFace())
                 count++;
 
+
         return (double)count / loopTimes;
+    }
+    public static double coinFlipRatios(int loopTime, java.util.Random r) {
+        Coin coin = new Coin();
+        int count = 0;
+
+        for (int i = 0; i < loopTime; i++){
+            coin.flipCoin(r);
+            if (coin.coinsValue.equals("tails"))
+                count++;
+            System.out.printf("coin fliped and it's a %s%n", coin.coinsValue);
+        }
+
+        return (double)count / loopTime;
     }
 }
