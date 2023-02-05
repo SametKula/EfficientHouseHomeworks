@@ -34,9 +34,16 @@ public class OddsUtil {
     public static double coinFlip(int loopTime, java.util.Random r) {
         Coin coin = new Coin();
 
-        return coinFlip(loopTime,"tails",r,coin,false);
+        return coinFlip(loopTime,r,"tails",coin,false);
     }
-    public static double coinFlip(int loopTimes,String wandtedCoinFace, java.util.Random r, Coin coin, boolean withCoinLogg) {
+
+    public static double coinFlip(int loopTime,java.util.Random r,boolean withLogg) {
+        Coin coin = new Coin();
+
+        return coinFlip(loopTime,r,"tails",coin,true);
+    }
+
+    public static double coinFlip(int loopTimes, java.util.Random r,String wandtedCoinFace, Coin coin, boolean withCoinLogg) {
         int count = 0;
 
         if (!coin.isCoinReqValid(wandtedCoinFace))
@@ -54,10 +61,5 @@ public class OddsUtil {
         }
 
         return (double)count / loopTimes;
-    }
-    public static double coinFlip(int loopTimes,java.util.Random r,boolean withLogg) {
-        Coin coin = new Coin();
-
-        return coinFlip(loopTimes,"tails",r,coin,true);
     }
 }
