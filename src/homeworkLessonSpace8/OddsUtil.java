@@ -28,7 +28,6 @@ public class OddsUtil {
             if(diceOne.getDiceValueUpOnTheFace() == diceTwo.getDiceValueUpOnTheFace())
                 count++;
 
-
         return (double)count / loopTimes;
     }
 }
