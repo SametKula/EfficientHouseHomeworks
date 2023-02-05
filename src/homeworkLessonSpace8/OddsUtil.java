@@ -31,10 +31,10 @@ public class OddsUtil {
 
         return (double)count / loopTimes;
     }
-    public static double coinFlipRatios(int loopTime, java.util.Random r) {
+    public static double coinFlip(int loopTime, java.util.Random r) {
         Coin coin = new Coin();
 
-        return coinFlip(loopTime,"tails",r,coin);
+        return coinFlip(loopTime,"tails",r,coin,false);
     }
     public static double coinFlip(int loopTimes,String wandtedCoinFace, java.util.Random r, Coin coin, boolean withCoinLogg) {
         int count = 0;
@@ -55,9 +55,9 @@ public class OddsUtil {
 
         return (double)count / loopTimes;
     }
-    public static double coinFlipRatioWithLoggedFaces(int loopTimes,java.util.) {
+    public static double coinFlip(int loopTimes,java.util.Random r,boolean withLogg) {
+        Coin coin = new Coin();
 
-
-
+        return coinFlip(loopTimes,"tails",r,coin,true);
     }
 }
