@@ -12,15 +12,20 @@ public class TaxFactory {
 
         return team;
     }
-    public static PetStore create(PetStore petStore, String name, String bestPlayerName, int playerCount, int gainByPerYear){
-        team.name = name;
-        team.bestPlayerName = bestPlayerName;
-        team.playerCountTheyHave = playerCount;
-        team.gainByYear = gainByPerYear;
-        team.taxNumber = taxNameCreate();
-
-        return team;
+    public static PetStore create(PetStore petStore, String name, int animalsCount){
+        return create(petStore,name,animalsCount,false);
     }
+
+    public static PetStore create(PetStore petStore, String name, int animalsCount, boolean haveStrorage){
+        petStore.name = name;
+        petStore.animalsTheyHave = animalsCount;
+        petStore.areTheyHaveStorage = haveStrorage;
+        petStore.taxNumber = taxNameCreate();
+
+        return petStore;
+    }
+
+
 
 
 
