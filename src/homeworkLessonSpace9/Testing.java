@@ -5,7 +5,7 @@ public class Testing {
         System.out.println("Welcome to testing area");
 
 
-        SoccerTeam kasimpasa = TaxFactory.create(new SoccerTeam(), "kasimpasa","icardi",14,10000);
+        PideSaloon kasimpasa = TaxFactory.create(new PideSaloon(),"Kardesler Pide",13.4,23,122);
 
         OverLoadUtil.disaplayTaxOwner(kasimpasa);
     }
