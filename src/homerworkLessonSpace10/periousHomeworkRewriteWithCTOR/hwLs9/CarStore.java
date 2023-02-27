@@ -5,9 +5,18 @@ public class CarStore {
     String taxNumber;
     int carsHave;
 
-    public CarStore(String name, int carsCount){
+    double taxPaymentRatio;
+    int yearlyGain;
+
+    public CarStore(String name, int carsCount, int gainForYear){
         taxOwnerName = name;
         carsHave = carsCount;
+        yearlyGain = gainForYear;//╰(*°▽°*)╯
         taxNumber = TaxFactory.taxNameCreate();
+    }
+
+
+    public void changeName(String newName){
+        taxOwnerName = newName;
     }
 }

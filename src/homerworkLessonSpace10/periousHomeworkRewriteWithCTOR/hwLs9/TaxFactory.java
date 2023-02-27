@@ -2,7 +2,7 @@ package homerworkLessonSpace10.periousHomeworkRewriteWithCTOR.hwLs9;
 
 import java.util.Random;
 
-public class TaxFactory <T> {
+public class TaxFactory  {
 
 
     public static String taxNameCreate() {
