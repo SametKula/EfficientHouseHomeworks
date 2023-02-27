@@ -2,8 +2,10 @@ package homerworkLessonSpace10.periousHomeworkRewriteWithCTOR.hwLs9;
 
 import java.util.Random;
 
-public class TaxFactory  {
-
+public class TaxFactory {
+    public static void displayTaxPropities(CarStore taxOwner) {
+        System.out.printf("tax owner's name %s and its tax number is %s", taxOwner.taxOwnerName, taxOwner.taxNumber);
+    }
 
     public static String taxNameCreate() {
         Random rd = new Random();
