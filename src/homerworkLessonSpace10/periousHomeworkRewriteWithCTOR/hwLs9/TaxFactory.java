@@ -6,6 +6,16 @@ public class TaxFactory {
     public static void displayTaxPropities(CarStore taxOwner) {
         System.out.printf("tax owner's name %s and its tax number is %s", taxOwner.taxOwnerName, taxOwner.taxNumber);
     }
+    public static void displayTaxPropities(Resturant taxOwner) {
+        System.out.printf("tax owner's name %s and its tax number is %s", taxOwner.taxOwnerName, taxOwner.taxNumber);
+    }
+
+    public static void setTaxRatio(CarStore taxOwner){
+        taxOwner.taxPaymentRatio = taxOwner.yearlyGain / 365.;
+    }
+    public static void setTaxRatio(Resturant taxOwner){
+        taxOwner.taxPaymentRatio = taxOwner.yearlyGain / 365.;
+    }
 
     public static String taxNameCreate() {
         Random rd = new Random();
