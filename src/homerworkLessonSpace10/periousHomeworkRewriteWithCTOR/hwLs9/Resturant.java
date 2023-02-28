@@ -12,7 +12,7 @@ public class Resturant {
         taxOwnerName = name;
         foodNames = havingFoodNames;
         yearlyGain = newNearlyGain;
-
+        taxPaymentRatio = yearlyGain / 365.;
         taxNumber = TaxFactory.taxNameCreate();
     }
 }
