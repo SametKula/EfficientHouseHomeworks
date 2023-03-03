@@ -10,7 +10,7 @@ public class Phone {
 
     public boolean wifi;
 
-    /*public void startPhone(){
+    public void startPhone(){
         while(isPhoneStartable()){
             System.out.print("phone is working right now/n");
             System.out.print("what whould you do: ");
@@ -24,20 +24,19 @@ public class Phone {
                     System.out.println(displayCommands("help"));
             }
         }
-    }*/
-    /*public String displayCommands(String command){
+    }
+    public String displayCommands(String command){
         command = command.toLowerCase().trim();
         return switch (command){
             case "help" ->
                 "display propirities-> for display prorities\nhelp -> for help\n";
             case "phoneproprities" ->
                 "model: ".concat(model).concat("\npublising year: " + publicingYear);
-            case "open bluethoot" -> {
-
-            }
+            case "open bluethoot" ->
+                "dondurdum hadi";
             default -> "this command not such a command";
         };
-    }*/
+    }
     public void switchBluethoot(){
         if (!bluethoot)
             System.out.println("now bluethoot opened");
