@@ -5,10 +5,20 @@ public class Phone {
     public String model;
     public int publicingYear;
     public double durability;
+    public int posiblePrice;
 
     public boolean bluethoot;
 
     public boolean wifi;
+
+    public Phone (String _model, int _publicingYear, double _durability, int _phonePrice){
+        model = _model;
+        publicingYear = _publicingYear;
+        durability = _durability;
+        posiblePrice = _phonePrice;
+
+    }
+    public double phonePrice = posiblePrice * durability;
 
     public void startPhone() {
         PHONE:
@@ -74,7 +84,7 @@ public class Phone {
     }
 
     public boolean isPhoneStartable() {
-        return durability > 4.5;
+        return durability > 0.45;
     }
 
 }
