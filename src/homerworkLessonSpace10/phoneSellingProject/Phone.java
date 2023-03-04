@@ -26,6 +26,7 @@ public class Phone {
             System.out.print("phone is working right now/n");
             System.out.print("what whould you do: ");
             String input = kb.next().toLowerCase().trim();
+            double phoneUsage = 0;
 
             switch (input) {
                 case "display propirities":
@@ -48,16 +49,27 @@ public class Phone {
     }
 
     public String displayCommands(String command) {
-        return switch (command) {
-            case "help" ->
-                    "display propirities-> for display prorities\nhelp -> for help\nopen bluethoot -> for swtich bluethoot on/off\n" +
-                            "open wifi -> for swtich wifi on/off\nfor quit type quit";
-            case "phoneproprities" ->
-                    String.format("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f", model, publicingYear, wifi, bluethoot, durability);
-            case "open bluethoot" -> switchBluethoot();
-            case "open wifi" -> switchWifi();
-            default -> "this command not such a command";
-        };
+        switch (command) {
+            case "help":
+                return """
+                        display propirities-> for display prorities
+                        help -> for help
+                        open bluethoot -> for swtich bluethoot on/off
+                        open wifi -> for swtich wifi on/off
+                        for quit type quit""";
+            case "phoneproprities":
+                return String.format("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f", model, publicingYear, wifi, bluethoot, durability);
+            case "bluethoot":
+                return switchBluethoot();
+            case "wifi":
+                return switchWifi();
+            default:
+                return "this command not such a command";
+        }
+    }
+
+    public void durabilityChange(double value){
+        durability -= value;
     }
 
     public String switchBluethoot() {
