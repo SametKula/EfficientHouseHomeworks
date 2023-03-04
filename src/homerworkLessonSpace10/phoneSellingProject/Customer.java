@@ -5,6 +5,8 @@ public class Customer {
     public Phone phone;
 
     public void givePhoneToSomeone(Customer otherCustomer){
+        otherCustomer.phone = phone;
 
+        phone = null;
     }
 }

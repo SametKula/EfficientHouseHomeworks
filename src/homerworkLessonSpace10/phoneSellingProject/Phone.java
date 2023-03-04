@@ -11,6 +11,7 @@ public class Phone {
     public boolean wifi;
 
     public void startPhone() {
+        PHONE:
         while (isPhoneStartable()) {
             System.out.print("phone is working right now/n");
             System.out.print("what whould you do: ");
@@ -26,17 +27,21 @@ public class Phone {
                 case "open wifi":
                     System.out.println(displayCommands("open wifi"));
                     break;
+                case "quit":
+                    break PHONE;
                 case "help":
                 default:
                     System.out.println(displayCommands("help"));
             }
         }
+        System.out.printf("Thank your for using %s", model);
     }
 
     public String displayCommands(String command) {
         return switch (command) {
             case "help" ->
-                    "display propirities-> for display prorities\nhelp -> for help\nopen bluethoot -> for swtich bluethoot on/off\nopen wifi -> for swtich wifi on/off";
+                    "display propirities-> for display prorities\nhelp -> for help\nopen bluethoot -> for swtich bluethoot on/off\n" +
+                            "open wifi -> for swtich wifi on/off\nfor quit type quit";
             case "phoneproprities" ->
                     String.format("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f", model, publicingYear, wifi, bluethoot, durability);
             case "open bluethoot" -> switchBluethoot();
