@@ -10,14 +10,21 @@ public class Phone {
 
     public boolean wifi;
 
-    public void startPhone(){
-        while(isPhoneStartable()){
+    public void startPhone() {
+        while (isPhoneStartable()) {
             System.out.print("phone is working right now/n");
             System.out.print("what whould you do: ");
-            String input = kb.next();
-            switch(input){
-                case "display propirities" :
+            String input = kb.next().toLowerCase().trim();
+
+            switch (input) {
+                case "display propirities":
                     System.out.println(displayCommands("phoneproprities"));
+                    break;
+                case "open bluethoot":
+                    System.out.println(displayCommands("open bluethoot"));
+                    break;
+                case "open wifi":
+                    System.out.println(displayCommands("open wifi"));
                     break;
                 case "help":
                 default:
@@ -25,27 +32,44 @@ public class Phone {
             }
         }
     }
-    public String displayCommands(String command){
-        command = command.toLowerCase().trim();
-        return switch (command){
+
+    public String displayCommands(String command) {
+        return switch (command) {
             case "help" ->
-                "display propirities-> for display prorities\nhelp -> for help\n";
+                    "display propirities-> for display prorities\nhelp -> for help\nopen bluethoot -> for swtich bluethoot on/off\nopen wifi -> for swtich wifi on/off";
             case "phoneproprities" ->
-                "model: ".concat(model).concat("\npublising year: " + publicingYear);
-            case "open bluethoot" ->
-                "dondurdum hadi";
+                    String.format("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f", model, publicingYear, wifi, bluethoot, durability);
+            case "open bluethoot" -> switchBluethoot();
+            case "open wifi" -> switchWifi();
             default -> "this command not such a command";
         };
     }
-    public void switchBluethoot(){
-        if (!bluethoot)
-            System.out.println("now bluethoot opened");
-        else
-            System.out.println("now bluethoot closed");
+
+    public String switchBluethoot() {
         bluethoot = !bluethoot;
+        if (bluethoot)
+            return "now bluethoot opened";
+
+        return "now bluethoot closed";
+
     }
-    public boolean isPhoneStartable(){
-        return durability > 4.5 ;
+
+    public String switchWifi() {
+        wifi = !wifi;
+        if (wifi)
+            return "now wifi opened";
+
+        return "now wifi closed";
+
+    }
+
+    public void errorPhone(double damage){
+        System.out.println("your phone get damage a smoewhere and this damage's value is : " + String.format("%.2f",damage));
+        durability -= damage;
+    }
+
+    public boolean isPhoneStartable() {
+        return durability > 4.5;
     }
 
 }
