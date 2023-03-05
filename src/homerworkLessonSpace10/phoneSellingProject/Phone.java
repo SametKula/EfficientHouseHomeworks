@@ -30,7 +30,7 @@ public class Phone {
             java.util.Random r = new java.util.Random();
             if (r.nextInt(12) == 3) {
                 errorPhone(0.3);
-                System.err.println("your phone got a error system rebooting now...");
+                System.out.println("your phone got a error system rebooting now...");
                 continue;
             }
 
@@ -51,9 +51,6 @@ public class Phone {
                     displayCommands("help");
             }
             durabilityLower();
-            System.out.println();
-            System.out.println();
-            System.out.println();
             System.out.println();
         }
         System.out.printf("Thank your for using %s", model);
@@ -106,6 +103,8 @@ public class Phone {
     }
 
     public void switchWifi() {
+        wifi = !wifi;
+
         swticher(this, !wifi, "wifi");
 
     }
