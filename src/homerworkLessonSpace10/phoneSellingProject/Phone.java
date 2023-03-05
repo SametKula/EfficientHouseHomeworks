@@ -26,77 +26,84 @@ public class Phone {
             System.out.print("phone is working right now/n");
             System.out.print("what whould you do: ");
             String input = kb.next().toLowerCase().trim();
-            double phoneUsage = 0;
 
             switch (input) {
                 case "display propirities":
-                    System.out.println(displayCommands("phoneproprities"));
+                    displayCommands("phoneproprities");
                     break;
                 case "open bluethoot":
-                    System.out.println(displayCommands("open bluethoot"));
+                    displayCommands("open bluethoot");
                     break;
                 case "open wifi":
-                    System.out.println(displayCommands("open wifi"));
+                    displayCommands("open wifi");
                     break;
                 case "quit":
                     break PHONE;
                 case "help":
                 default:
-                    System.out.println(displayCommands("help"));
+                    displayCommands("help");
             }
+            durabilityLower();
         }
         System.out.printf("Thank your for using %s", model);
     }
 
-    public String displayCommands(String command) {
+    public void displayCommands(String command) {
         switch (command) {
             case "help":
-                return """
+                System.out.println("""
                         display propirities-> for display prorities
                         help -> for help
                         open bluethoot -> for swtich bluethoot on/off
                         open wifi -> for swtich wifi on/off
-                        for quit type quit""";
+                        for quit type quit""");
+                break;
             case "phoneproprities":
-                return String.format("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f", model, publicingYear, wifi, bluethoot, durability);
+                System.out.printf("model: %s\npublish year: %d\nwifi: %b\nblueathoot: %b\ndurability: %.2f%n", model, publicingYear, wifi, bluethoot, durability);
+                break;
             case "bluethoot":
-                return switchBluethoot();
+                switchBluethoot();
+                break;
             case "wifi":
-                return switchWifi();
+                switchWifi();
+                break;
             default:
-                return "this command not such a command";
+                System.out.println("this command not such a command");
         }
     }
 
-    public void durabilityChange(double value){
+    public void durabilityLower(double value){
         durability -= value;
     }
-
-    public String switchBluethoot() {
-        bluethoot = !bluethoot;
-        if (bluethoot)
-            return "now bluethoot opened";
-
-        return "now bluethoot closed";
-
-    }
-
-    public String switchWifi() {
-        wifi = !wifi;
-        if (wifi)
-            return "now wifi opened";
-
-        return "now wifi closed";
-
+    public void durabilityLower(){
+        durabilityLower(0.02);
     }
 
     public void errorPhone(double damage){
         System.out.println("your phone get damage a smoewhere and this damage's value is : " + String.format("%.2f",damage));
-        durability -= damage;
+        durabilityLower(damage);
     }
 
     public boolean isPhoneStartable() {
         return durability > 0.45;
+    }
+
+    public void switchBluethoot() {
+        swticher(this ,!bluethoot ,"bluethoot");
+
+    }
+    public void switchWifi() {
+        swticher(this ,!wifi ,"wifi");
+
+    }
+    public void swticher(Phone ph, boolean boolexpres, String changedOne){
+        if (changedOne.equals("wifi"))
+            ph.wifi = boolexpres;
+        else if (changedOne.equals("bluethoot")){
+            ph.bluethoot = boolexpres;
+        }
+
+        System.out.printf("the %s is %s now have a nice day",changedOne , boolexpres ? "on": "off");
     }
 
 }
