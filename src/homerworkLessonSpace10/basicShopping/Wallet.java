@@ -1,4 +1,4 @@
-package lessons.oop.basics.constructors.basicshoppingapp;
+package homerworkLessonSpace10.basicShopping;
 
 public class Wallet {
     public Card card;

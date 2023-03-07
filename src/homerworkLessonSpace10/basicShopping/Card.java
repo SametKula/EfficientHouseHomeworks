@@ -1,5 +1,4 @@
-package lessons.oop.basics.constructors.basicshoppingapp;
-
+package homerworkLessonSpace10.basicShopping;
 public class Card {
     public String password;
     public int balance;

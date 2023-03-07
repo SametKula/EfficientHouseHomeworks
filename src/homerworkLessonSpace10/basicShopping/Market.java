@@ -1,5 +1,4 @@
-package lessons.oop.basics.constructors.basicshoppingapp;
-
+package homerworkLessonSpace10.basicShopping;
 public class Market {
     public static java.util.Scanner kb = new java.util.Scanner(System.in);
 
