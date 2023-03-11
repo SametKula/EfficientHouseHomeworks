@@ -42,7 +42,5 @@ public class Customer {
         shoppingList = shoppingList.concat(item);
     }
 
-    public int getShoppingListItemByOrder(int i) {
-        return Integer.parseInt(getShoppingList().substring(i, i + 1));
-    }
+
 }
