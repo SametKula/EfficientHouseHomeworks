@@ -1,9 +1,33 @@
 package homerworkLessonSpace10;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Test {
     public static void main(String[] args) {
 
-        Exp kb = new Exp(12,"adana");
+        try {
+            URL url = new URL("https://dummyjson.com/products/1");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Content-Type", "application/json");
+
+            // you can use one of these methods to get the results
+            connection.connect();
+            System.out.println(connection.getResponseCode());
+            //System.out.println(connection.getInputStream().toString());
+            System.out.println(connection.getOutputStream().toString());
+
+
+// close the connection
+            connection.disconnect();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
