@@ -1,6 +1,8 @@
 package homerworkLessonSpace10.basicShopping;
 
 public class Customer {
+    public String id;
+    public String password;
     public String name;
     public Wallet wallet;
     public Phone phone;
@@ -41,6 +43,17 @@ public class Customer {
         item = item.trim();
         shoppingList = shoppingList.concat(item);
     }
-
+    public String getId(){
+        return id;
+    }
+    public void setId(String newId){
+        id = newId;
+    }
+    public String getPassword(){
+        return id;
+    }
+    public void setPassword(String newPassword){
+        id = newPassword;
+    }
 
 }

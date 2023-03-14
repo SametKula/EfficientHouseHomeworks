@@ -23,4 +23,8 @@ public class Card {
     {
         return balance;
     }
+
+    public boolean checkBalance(int costingMoney){
+        return getBalance() >= costingMoney;
+    }
 }
