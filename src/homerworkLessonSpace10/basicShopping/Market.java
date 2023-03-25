@@ -79,9 +79,11 @@ public class Market {
         else
             cost = getProduct(customer.getShoppingList());
 
+        System.out.println(formatShoppingList(customer.getShoppingList()));
+
 
         System.out.println("How do you want to pay ? \n" +
-                "Card or Cash");
+                "Card ,Cash or QR");
 
         Wallet wallet = customer.getWallet();
         String paymentChoice = kb.nextLine();
@@ -90,7 +92,9 @@ public class Market {
             paymentWithCard(wallet.getCard(), cost);
         else if (paymentChoice.equalsIgnoreCase("cash"))
             paymentWithCash(wallet, cost);
-        else
+        else if (paymentChoice.equalsIgnoreCase("qr")) {
+
+        } else
             System.out.println("Invalid Input");
     }
 
@@ -98,7 +102,7 @@ public class Market {
         for (int i = 3; 0 < i; i--) {
             System.out.print("password:");
             if (kb.nextLine().equals(card.getPassword())) {
-                if (checkBalance(card.getBalance(), cost)) {
+                if (card.checkBalance(cost)) {
                     card.setBalance(card.getBalance() - cost);
                     System.out.println("Successfully Paid\n");
                     System.out.printf("Remaining Card Balance : %d", card.getBalance());
@@ -113,17 +117,17 @@ public class Market {
     }
 
     public static void paymentWithCash(Wallet wallet, int cost) {
-        if (checkBalance(wallet.getCashMoney(), cost)) {
+        if (wallet.getCard().checkBalance(cost)) {
             wallet.setCashMoney(wallet.getCashMoney() - cost);
             System.out.println("Thanks for your choosing us");
             System.out.printf("New Balance : %d", wallet.getCashMoney());
         } else
             System.out.println("You did not give enough money");
     }
+    public static void paymentWithQR(Wallet wallet, int cost){
 
-    public static boolean checkBalance(int balance, int cost) {
-        return balance >= cost;
     }
+
 
     public static boolean checkInput(int choice) {
         boolean flag = false;
@@ -150,6 +154,7 @@ public class Market {
         }
 
         return String.format("""
+                Products & Costs
                 ==========================================
                 | Milk        %-27d|
                 | Bread       %-27d|
