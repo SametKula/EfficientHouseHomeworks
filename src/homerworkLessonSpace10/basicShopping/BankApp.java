@@ -89,7 +89,8 @@ public class BankApp {
         exchange(sender, receiver, toSendMoney);
 
     }
-    public void exchange(Card sender, Card receiver, int toSendMoney){
+
+    public void exchange(Card sender, Card receiver, int toSendMoney) {
         if (sender.checkBalance(toSendMoney)) {
             sender.setBalance(sender.getBalance() - toSendMoney);
             receiver.setBalance(receiver.getBalance() + toSendMoney);
@@ -98,18 +99,22 @@ public class BankApp {
             System.out.println("Insufficient Balance");
         }
     }
-    public void qrPayment(){
+
+    public void qrPayment() {
         if (getTemporaryCost() == 0)
             System.out.println("there is no qr");
         else
-            exchange(customer.getWallet().getCard(),new Card("1234",1000),getTemporaryCost());
+            exchange(customer.getWallet().getCard(), new Card("1234", 1000), getTemporaryCost());
+
         setTemporaryCost(0);
     }
-    public void setTemporaryCost(int newTemporaryCost){
-        temporaryCost = newTemporaryCost;
-    }
-    public int getTemporaryCost(){
+
+    public int getTemporaryCost() {
         return temporaryCost;
+    }
+
+    public void setTemporaryCost(int newTemporaryCost) {
+        temporaryCost = newTemporaryCost;
     }
 
     public void deposit() {
