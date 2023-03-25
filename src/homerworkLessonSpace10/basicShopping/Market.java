@@ -93,7 +93,7 @@ public class Market {
         else if (paymentChoice.equalsIgnoreCase("cash"))
             paymentWithCash(wallet, cost);
         else if (paymentChoice.equalsIgnoreCase("qr")) {
-
+            paymentWithQR(customer, cost);
         } else
             System.out.println("Invalid Input");
     }
@@ -124,8 +124,11 @@ public class Market {
         } else
             System.out.println("You did not give enough money");
     }
-    public static void paymentWithQR(Wallet wallet, int cost){
-
+    public static void paymentWithQR(Customer customer, int cost){
+        BankApp bankApp = new BankApp();
+        bankApp.setTemporaryCost(cost);
+        bankApp.login(customer);
+        System.out.println("have a nice day");
     }
 
 

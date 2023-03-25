@@ -8,7 +8,9 @@ public class Customer {
     public Phone phone;
     public String shoppingList;
 
-    public Customer(String newName, Wallet newWallet, Phone newPhone, String newShoppingList) {
+    public Customer(String newId, String newPassword ,String newName, Wallet newWallet, Phone newPhone, String newShoppingList) {
+        id = newId;
+        password = newPassword;
         name = newName;
         wallet = newWallet;
         phone = newPhone;
@@ -50,10 +52,11 @@ public class Customer {
         id = newId;
     }
     public String getPassword(){
-        return id;
+        return password;
     }
     public void setPassword(String newPassword){
         id = newPassword;
     }
+
 
 }
