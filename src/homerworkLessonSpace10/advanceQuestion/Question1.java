@@ -1,39 +1,36 @@
 package homerworkLessonSpace10.advanceQuestion;
 
 public class Question1 {
+    public static void main(String[] args) {
 
-    public static boolean isWordThereAre(String word, String aBiggerString) {
-        return aBiggerString.contains(word);
     }
 
-    public static int wordPlace(String word, String aBiggerString, int beginIndex) {
-        return aBiggerString.indexOf(word, beginIndex);
+    public static int wordsFirstPlace(String aBigString, String finderOne) {
+        return aBigString.indexOf(finderOne);
     }
 
-    public static int wordPlace(String word, String aBiggerString) {
-        return wordPlace(word, aBiggerString, 0);
+    public static String displayPlaces(String aBigString, String wanted) {
+        int count = 0;
+        String places = "";
+
+        for (int i = 0; i < aBigString.length(); i++)
+            if (wordsFirstPlace(aBigString.substring(i), wanted) == 0) {
+                places += String.format("the number the number is %d%n",i);
+                count++;
+            }
+        places += "and there are " + count + " wanted numbers";
+
+        return places;
     }
 
-    public static int wordPlace(int aInt, long aLong) {
-        return wordPlace(aInt + "", aLong + "");
-    }
+    public static String reversed(String wanted){
+        String result = "";
 
-    public static int howManyHaveWord(String word, String aBiggerWord) {
-        int count = -1, lastFounded = 0;
-
-        while (lastFounded != -1) {
-            lastFounded = wordPlace(word, aBiggerWord, lastFounded + 1);
-            count++;
+        for (int i = wanted.length() - 1; i >= 0; i--){
+            result += wanted.charAt(i);
         }
 
-        return count;
+        return result;
     }
 
-    public static String countsPlaces(String word, String aBiggerWord) {
-        return "orders: " + 1 + "   count" + howManyHaveWord(word, aBiggerWord) + "   is word there in another :" + isWordThereAre(word, aBiggerWord);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(countsPlaces("is", "wird is long is asper isdfsg"));
-    }
 }
