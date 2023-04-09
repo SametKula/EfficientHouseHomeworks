@@ -3,8 +3,8 @@ package homerworkLessonSpace10.interviewProject;
 public class Tst {
     public static void main(String[] args)
     {
-        System.out.println(helloTo("Eren", 31, 3));
-        System.out.println(getLongestPalindrom("ahmet eren adaedipadakisikalipapilakisikada"));
+        //System.out.println(helloTo("Eren", 31, 3));
+        System.out.println(getLongestPalindrom(" ahmet eren adaedipadakisikalipapilakisikada "));
     }
     public static String helloTo(String name, int day, int month){
         return String.format("hello %s (%d / %d)",name ,day, month);
