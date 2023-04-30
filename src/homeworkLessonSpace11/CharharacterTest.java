@@ -37,6 +37,7 @@ class TextFactory {
                 symbolCount++;
         }
 
+
         if (letterCount < 3)
             password.setReasonOfInvaliditation(password.getReasonOfInvaliditation().concat("Letter not enough"));
         if (digitCount < 3)
