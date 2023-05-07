@@ -4,6 +4,9 @@ public class Capitalize {
     public static String capitalize(String text){
         int i;
 
+        if (text.isBlank())
+            return text;
+
         for (i = 0; i < text.length() ; i++)
             if (Character.isLetter(text.charAt(i)))
                 break;
@@ -16,22 +19,25 @@ public class Capitalize {
         for (;;){
             int firstQuestionMark = text.indexOf("?"), firstDot = text.indexOf("."), tempTarget;
 
-            if (firstQuestionMark > firstDot && firstDot != -1)
+            if (firstQuestionMark == -1 && firstDot != -1)
                 tempTarget = firstDot;
-            else if (firstQuestionMark < firstDot && firstQuestionMark != -1)
+            else if (firstQuestionMark != -1 && firstDot == -1)
                 tempTarget = firstQuestionMark;
+            else if (firstQuestionMark != -1 && firstDot != -1)
+                tempTarget = Math.min(firstQuestionMark,firstDot);
             else
                 break;
 
             result += capitalize(text.substring(0,tempTarget + 1));
             text = text.substring(tempTarget + 1);
         }
-
+        result += capitalize(text.equals("") ? " ": text);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(capitalizeAllSentences("asdgnmsfadgjhdg .sadfsdaafasd? asadfsadffsdafasdasdf?asdasdasdasd."));
+        System.out.println(capitalizeAllSentences("ahmet veliyi ? yedi.veli?mahmuta. yem olmadi?aasdfsfad.sadfasdffsad.asfdfsadfasdfasd.fasdaasfdasdf"));
+        System.out.print(capitalize(" "));
     }
 
 }
