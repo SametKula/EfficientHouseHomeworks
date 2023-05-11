@@ -36,8 +36,7 @@ public class Capitalize {
     }
 
     public static void main(String[] args) {
-        System.out.println(capitalizeAllSentences("ahmet veliyi ? yedi.veli?mahmuta. yem olmadi?aasdfsfad.sadfasdffsad.asfdfsadfasdfasd.fasdaasfdasdf"));
-        System.out.print(capitalize(" "));
+
     }
 
 }
