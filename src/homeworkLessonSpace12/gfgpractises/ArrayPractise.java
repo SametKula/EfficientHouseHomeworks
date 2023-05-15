@@ -80,11 +80,53 @@ public class ArrayPractise {
 
         return arr;
     }
+    public static int indexOfInArray(int[] arr, int wanted){
+        for (int i = 0; i< arr.length; i++)
+            if (arr[i] == wanted)
+                return i;
+        return -1;
+    }
+    public static int indexOfInArray(String[] arr, String wanted){
+        for (int i = 0; i< arr.length; i++)
+            if (arr[i].equals(wanted))
+                return i;
+        return -1;
+    }
+
+    public static String listOfWantedIndex(int[] arr, int wanted){
+        String result = "";
+        int indexOfNumber;
+
+        /*
+        while(true){
+            indexOfNumber= indexOfInArray(arr,wanted);
+
+            if (indexOfNumber == -1)
+                break;
+
+            result +=indexOfNumber;
+            result *= 10;
+            arr[indexOfNumber] = wanted + 1;
+        }
+        */
+
+        while(true){
+            indexOfNumber= indexOfInArray(arr,wanted);
+
+            if (indexOfNumber == -1)
+                break;
+
+            arr[indexOfNumber] = wanted + 1;
+            result += String.format("| %d ",indexOfNumber + 1);
+        }
+
+        return result + "|";
+    }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6};
+        int[] arr = {1,2,3,4,5,6,2,3,34,45,5,5,566,3,3,3,45,5,3};
 
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
-        System.out.println(Arrays.toString(shiftOneRinght(arr)));
+        System.out.println(listOfWantedIndex(arr,3));
     }
 }
