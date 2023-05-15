@@ -40,10 +40,51 @@ public class ArrayPractise {
         return new String[]{shortest,longest};
     }
 
-    public static void main(String[] args) {
-        //int[] arr = {1,2,3,4,5,6,7,8,9,4,6,345,65,4,5};
+    public static int[] incraseAllElementsByTwo(int[] arr){
+        for (int i = 0; i < arr.length; i++)
+            arr[i] += 2;
 
-        String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
-        System.out.println(Arrays.toString(getLongestAndSortestWords(arr)));
+        return arr;
+    }
+
+    public static int addAllPositiveNumbers(int[] arr){
+        int result = 0;
+
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] > 0)
+                result += arr[i];
+
+        return result;
+    }
+
+    public static int[] shiftOneRinght(int[] arr){
+        /*
+        int[] newArray = arr;
+
+        newArray[0] = arr[arr.length - 1];
+
+        for (int i =  0; i < arr.length - 1; i++){
+            newArray[i] = arr[i + 1];
+        }
+        */
+
+        //------------------
+        int x1 = arr[0], x2 , lastIndex = arr[arr.length - 1];
+
+        for (int i = 1; i < arr.length; i++){
+            x2 = arr[i];
+            arr[i] = x1;
+            x1 = x2;
+        }
+        arr[0] = lastIndex;
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6};
+
+        //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
+        System.out.println(Arrays.toString(shiftOneRinght(arr)));
     }
 }
