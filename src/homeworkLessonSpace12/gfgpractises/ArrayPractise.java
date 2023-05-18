@@ -59,6 +59,8 @@ public class ArrayPractise {
     }
 
     public static int[] shiftOneRinght(int[] arr) {
+        if (arr.length == 0)
+            return arr;
         /*
         int[] newArray = arr;
 
@@ -70,6 +72,8 @@ public class ArrayPractise {
         */
 
         //------------------
+/*
+
         int x1 = arr[0], x2, lastIndex = arr[arr.length - 1];
 
         for (int i = 1; i < arr.length; i++) {
@@ -79,6 +83,15 @@ public class ArrayPractise {
         }
         arr[0] = lastIndex;
 
+*/
+        //------------------
+
+        int lastIndex = arr[arr.length - 1];
+
+        for (int i = arr.length - 1; i > 0; i--)
+            arr[i] = arr[i - 1];
+
+        arr[0] = lastIndex;
         return arr;
     }
 
@@ -144,14 +157,19 @@ public class ArrayPractise {
         return arr;
     }
 
+
+    }
+
+
+class ArrayTest{
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 2, 3, 34, 45, 5, 5, 566, 3, 3, 3, 45, 5, 3};
+        int[] arr = {1, 2, 3, 4, 5, 6};
 
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
-        int[] aArrayInConsole = createAArrayInConsole(new Scanner(System.in));
-        System.out.println(Arrays.toString(aArrayInConsole));
+        //int[] aArrayInConsole = createAArrayInConsole(new Scanner(System.in));
 
+        System.out.println(Arrays.toString(ArrayPractise.shiftOneRinght(arr)));
     }
 }
