@@ -1,6 +1,8 @@
 package homeworkLessonSpace12.gfgpractises;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ArrayPractise {
@@ -143,7 +145,7 @@ public class ArrayPractise {
         return result + "|";
     }
 
-    public static int[] createAArrayInConsole(Scanner kb) {
+    public static int[] createArrayInConsole(Scanner kb) {
         System.out.print("enter your array lenght:");
         int arrayLenght = Integer.parseInt(kb.nextLine());
         int[] arr = new int[arrayLenght];
@@ -157,19 +159,27 @@ public class ArrayPractise {
         return arr;
     }
 
+    public static List<Integer> getAllElements(int[] array) {
+        List<Integer> result = new ArrayList<Integer>();
 
+        for (int i = 0; i < array.length; i++)
+            result.add(array[i]);
+
+        return result;
     }
 
+}
 
-class ArrayTest{
+
+class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
 
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
-        //int[] aArrayInConsole = createAArrayInConsole(new Scanner(System.in));
+        //int[] aArrayInConsole = createArrayInConsole(new Scanner(System.in));
 
-        System.out.println(Arrays.toString(ArrayPractise.shiftOneRinght(arr)));
+        //System.out.println(Arrays.toString(ArrayPractise.shiftOneRinght(arr)));
     }
 }
