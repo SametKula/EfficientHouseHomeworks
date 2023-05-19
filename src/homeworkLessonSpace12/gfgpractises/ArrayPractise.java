@@ -168,6 +168,26 @@ public class ArrayPractise {
         return result;
     }
 
+    public static int getMissingElement(int[] array) {
+        Arrays.sort(array);
+
+        ELEMENT:
+        for (int i = 0; i < array.length; i++) {
+            boolean flag = false;
+            int temp = -2;
+            for (int j = 1; j <= array.length; j++) {
+                flag = array[i] == j;
+                if (flag) {
+                    temp = j;
+                    continue ELEMENT;
+                }
+            }
+            if (flag){
+                return temp;
+            }
+        }
+        return -1;
+    }
 }
 
 
@@ -175,6 +195,7 @@ class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
 
+        System.out.println(ArrayPractise.getMissingElement(arr));
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
