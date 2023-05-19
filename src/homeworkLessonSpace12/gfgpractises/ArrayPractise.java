@@ -180,23 +180,44 @@ public class ArrayPractise {
     }
 
     public static int getDuplicatedElement(int[] array) {
+        return getDuplicaedElementIndex(array);
+    }
+    public static int getDuplicaedElementIndex(int[] array){
         for (int i = 0; i < array.length; i++){
             for (int j = 0; j < array.length; j++){
                 if (i == j)
                     continue;
 
                 if (array[j] == array[i])
-                    return array[i];
+                    return j;
             }
         }
         return -1;
+    }
+
+    public static void removeAllDuplicates(int[] array){
+
+    }
+
+    public static String findMaxAndMin(int[] array){
+        int max = array[0], min = array[0];
+
+        for (int i = 1; i < array.length; i++){
+            if (max < array[i])
+                max = array[i];
+
+            if (min > array[i])
+                min = array[i];
+        }
+
+        return String.format("Array's max value is : %d%nArray's min value is : %d%n", max, min);
     }
 }
 class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        System.out.println(ArrayPractise.getDuplicatedElement(arr));
+        System.out.println(ArrayPractise.findMaxAndMin(arr));
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
