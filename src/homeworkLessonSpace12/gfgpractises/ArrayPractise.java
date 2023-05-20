@@ -195,7 +195,7 @@ public class ArrayPractise {
             }
         }
         return -1;
-    }
+    }// remove ile yapilabilirmis aga simdilik gerek kalmadi gibi
 
     public static String findMaxAndMin(int[] array) {
         int max = array[0], min = array[0];
@@ -231,16 +231,17 @@ class ArrayUtils {
 
         return newArray;
     }
-    public static int[] subarray(int[] array, int beginIndex){
+
+    public static int[] subarray(int[] array, int beginIndex) {
         return subarray(array, beginIndex, array.length);
     }
 
-    public static int[] remove(int[] array, int x){
+    public static int[] remove(int[] array, int x) {
         int[] newArray = new int[array.length - 1];
         boolean flag = true;
 
-        for (int i = 0, j = 0; i < array.length; i++, j++){
-            if (array[i] == x && flag){
+        for (int i = 0, j = 0; i < array.length; i++, j++) {
+            if (array[i] == x && flag) {
                 flag = false;
                 j--;
                 continue;
@@ -250,6 +251,7 @@ class ArrayUtils {
 
         return newArray;
     }
+
     public static boolean contains(int[] array, int x) {
         for (int i = 0; i < array.length; i++)
             if (x == array[i])
@@ -258,11 +260,11 @@ class ArrayUtils {
         return false;
     }
 
-    public static int[] removeAllDuplications(int[] array){
+    public static int[] removeAllDuplications(int[] array) {
         int[] newArray = new int[0];
 
-        for (int i = 0; i < array.length; i++){
-            if (contains(subarray(array,i + 1),array[i]))
+        for (int i = 0; i < array.length; i++) {
+            if (contains(subarray(array, i + 1), array[i]))
                 continue;
 
             newArray = add(newArray, array[i]);
@@ -270,12 +272,12 @@ class ArrayUtils {
         return newArray;
     }
 
-    public static int[] removeDuplicationsWithRemoveMethod(int[] array){
+    public static int[] removeDuplicationsWithRemoveMethod(int[] array) {
         for (int i = 1; i < array.length; i++)
-            if (contains(subarray(array,0,i),array[i]))
-                array = remove(array,array[i]);
+            if (contains(subarray(array, 0, i), array[i]))
+                array = remove(array, array[i]);
 
-        return contains(subarray(array,0, array.length - 1),array[array.length -1]) ? remove(array,array[array.length -1]) : array;
+        return contains(subarray(array, 0, array.length - 1), array[array.length - 1]) ? remove(array, array[array.length - 1]) : array;
     }
 }
 
