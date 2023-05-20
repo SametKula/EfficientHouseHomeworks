@@ -1,6 +1,7 @@
 package homeworkLessonSpace12.gfgpractises;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -195,10 +196,6 @@ public class ArrayPractise {
         return -1;
     }
 
-    public static void removeAllDuplicates(int[] array){
-
-    }
-
     public static String findMaxAndMin(int[] array){
         int max = array[0], min = array[0];
 
@@ -213,11 +210,25 @@ public class ArrayPractise {
         return String.format("Array's max value is : %d%nArray's min value is : %d%n", max, min);
     }
 }
+
+class ArrayUtils {
+    public static int[] add(int[] array,int x){
+        int[] newArray = new int[array.length + 1];
+
+        System.arraycopy(array, 0, newArray, 0, array.length);// intellij onerdi
+
+        newArray[array.length] = x;
+
+        return newArray;
+    }
+}
 class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        System.out.println(ArrayPractise.findMaxAndMin(arr));
+        arr = ArrayUtils.add(arr,11);
+
+        System.out.println(Arrays.toString(arr));
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
