@@ -183,9 +183,10 @@ public class ArrayPractise {
     public static int getDuplicatedElement(int[] array) {
         return getDuplicaedElementIndex(array);
     }
-    public static int getDuplicaedElementIndex(int[] array){
-        for (int i = 0; i < array.length; i++){
-            for (int j = 0; j < array.length; j++){
+
+    public static int getDuplicaedElementIndex(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
                 if (i == j)
                     continue;
 
@@ -196,10 +197,10 @@ public class ArrayPractise {
         return -1;
     }
 
-    public static String findMaxAndMin(int[] array){
+    public static String findMaxAndMin(int[] array) {
         int max = array[0], min = array[0];
 
-        for (int i = 1; i < array.length; i++){
+        for (int i = 1; i < array.length; i++) {
             if (max < array[i])
                 max = array[i];
 
@@ -212,7 +213,7 @@ public class ArrayPractise {
 }
 
 class ArrayUtils {
-    public static int[] add(int[] array,int x){
+    public static int[] add(int[] array, int x) {
         int[] newArray = new int[array.length + 1];
 
         System.arraycopy(array, 0, newArray, 0, array.length);// intellij onerdi
@@ -222,28 +223,43 @@ class ArrayUtils {
         return newArray;
     }
 
-    public static int[] subarray(int[] array,int beginIndex,int endIndex){
+    public static int[] subarray(int[] array, int beginIndex, int endIndex) {
         int[] newArray = new int[endIndex - beginIndex];
 
-        for(int i = beginIndex, j = 0; i < endIndex; i++, j++)
+        for (int i = beginIndex, j = 0; i < endIndex; i++, j++)
             newArray[j] = array[i];
 
         return newArray;
     }
 
-    public static boolean contains(int[] array,int x){
-        for(int i = 0; i < array.length; i++)
+    public static int[] remove(int[] array, int x){
+        int[] newArray = new int[array.length - 1];
+        boolean flag = true;
+
+        for (int i = 0, j = 0; i < array.length; i++, j++){
+            if (array[i] == x && flag){
+                flag = false;
+                j--;
+                continue;
+            }
+            newArray[j] = array[i];
+        }
+        return newArray;
+    }
+    public static boolean contains(int[] array, int x) {
+        for (int i = 0; i < array.length; i++)
             if (x == array[i])
                 return true;
 
         return false;
     }
 }
+
 class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        System.out.println(ArrayUtils.contains(ArrayUtils.subarray(arr, 3, 7),99));
+        System.out.println(Arrays.toString(ArrayUtils.remove(arr, 1)));
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
