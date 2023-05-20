@@ -221,14 +221,29 @@ class ArrayUtils {
 
         return newArray;
     }
+
+    public static int[] subarray(int[] array,int beginIndex,int endIndex){
+        int[] newArray = new int[endIndex - beginIndex];
+
+        for(int i = beginIndex, j = 0; i < endIndex; i++, j++)
+            newArray[j] = array[i];
+
+        return newArray;
+    }
+
+    public static boolean contains(int[] array,int x){
+        for(int i = 0; i < array.length; i++)
+            if (x == array[i])
+                return true;
+
+        return false;
+    }
 }
 class ArrayTest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        arr = ArrayUtils.add(arr,11);
-
-        System.out.println(Arrays.toString(arr));
+        System.out.println(ArrayUtils.contains(ArrayUtils.subarray(arr, 3, 7),99));
         //String[] arr = {"Salda" , "Isa" , "Asil", "Kübra", "Elif"};
         //System.out.println(listOfWantedIndex(arr,3));
 
