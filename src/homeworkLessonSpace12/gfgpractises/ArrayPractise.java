@@ -231,6 +231,9 @@ class ArrayUtils {
 
         return newArray;
     }
+    public static int[] subarray(int[] array, int beginIndex){
+        return subarray(array, beginIndex, array.length);
+    }
 
     public static int[] remove(int[] array, int x){
         int[] newArray = new int[array.length - 1];
@@ -259,12 +262,20 @@ class ArrayUtils {
         int[] newArray = new int[0];
 
         for (int i = 0; i < array.length; i++){
-            if (contains(subarray(array,i + 1, array.length),array[i]))
+            if (contains(subarray(array,i + 1),array[i]))
                 continue;
 
             newArray = add(newArray, array[i]);
         }
         return newArray;
+    }
+
+    public static int[] removeDuplicationsWithRemoveMethod(int[] array){
+        for (int i = 1; i < array.length; i++)
+            if (contains(subarray(array,0,i),array[i]))
+                array = remove(array,array[i]);
+
+        return contains(subarray(array,0, array.length - 1),array[array.length -1]) ? remove(array,array[array.length -1]) : array;
     }
 }
 
