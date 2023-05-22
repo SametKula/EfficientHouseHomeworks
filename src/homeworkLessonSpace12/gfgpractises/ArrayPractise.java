@@ -279,6 +279,14 @@ class ArrayUtils {
 
         return contains(subarray(array, 0, array.length - 1), array[array.length - 1]) ? remove(array, array[array.length - 1]) : array;
     }
+	public static int factoriel(int n){
+		int result = 1;
+		
+		for(int i = 1; i < n; i++)
+			n *= i;
+		
+		return result;
+	}
 }
 
 class ArrayTest {
