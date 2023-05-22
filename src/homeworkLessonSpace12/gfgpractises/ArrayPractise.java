@@ -281,6 +281,9 @@ class ArrayUtils {
     }
 	public static int factoriel(int n){
 		int result = 1;
+
+        if (n < 2)
+            return 1;
 		
 		for(int i = 1; i < n; i++)
 			n *= i;
