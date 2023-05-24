@@ -48,8 +48,7 @@ public class GameFactory {
 
     public static int getInput(java.util.Scanner kb) {
         System.out.print("enter your position: ");
-        int pos = Integer.parseInt(kb.nextLine());
-        return pos;
+        return Integer.parseInt(kb.nextLine());
     }
 
     public static int getRandomNumberForTable(Table table) {
@@ -64,8 +63,7 @@ public class GameFactory {
     }
 
     public static Table getTable() {
-        Table table = new Table();
-        return table;
+        return new Table();
     }
 
     public static boolean isGameTableFull(Table table) {
