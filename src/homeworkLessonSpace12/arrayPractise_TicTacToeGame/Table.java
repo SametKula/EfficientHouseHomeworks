@@ -20,6 +20,17 @@ public class Table {
             System.out.println();
         }
     }
+    public boolean checkTable(char user){
+        char[][] gameTable = getGameTable();
+        boolean result = false;
+        for(int i = 0, j = 2; i < 3 & j <= 4; i++, j += 2)
+            if (gameTable[i][0] == user && gameTable[i][2] == user && gameTable[i][4] == user || gameTable[0][j] == user && gameTable[1][j] == user && gameTable[2][j] == user)
+                result = true;
 
+        if (gameTable[0][0] == user && gameTable[1][2] == user && gameTable[2][4] == user || gameTable[0][4] == user && gameTable[1][2] == user && gameTable[2][0] == user)
+            result = true;
+
+        return result;
+    }
 
 }

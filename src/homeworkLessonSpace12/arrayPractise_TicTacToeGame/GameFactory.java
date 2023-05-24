@@ -39,7 +39,7 @@ public class GameFactory {
     }
 
     public static int getInput(java.util.Scanner kb){
-        System.out.print("enter your position");
+        System.out.print("enter your position: ");
         int pos = Integer.parseInt(kb.nextLine());
         return pos;
     }
@@ -57,6 +57,10 @@ public class GameFactory {
             turn = !turn;
 
             table.printGameTable();
+            if(table.checkTable(!turn ? 'X' : 'O')){
+                System.out.printf("Congratulations, %s won!", !turn ? "Player" : "Computer");
+                break;
+            }
         }
     }
 
