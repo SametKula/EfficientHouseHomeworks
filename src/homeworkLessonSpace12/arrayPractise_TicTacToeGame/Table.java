@@ -7,19 +7,6 @@ public class Table {
             {' ', '|', ' ', '|',' '}
     };
 
-    public char[][] getGameTable() {
-        return gameTable;
-    }
-    public void setGameTable(char[][] newGameTable){
-        gameTable = newGameTable;
-    }
-    public void printGameTable(){
-        for (char[] row : getGameTable()){
-            for (char colum : row)
-                System.out.print(colum);
-            System.out.println();
-        }
-    }
     public boolean checkTable(char user){
         char[][] gameTable = getGameTable();
         boolean result = false;
@@ -32,6 +19,18 @@ public class Table {
 
         return result;
     }
-
+    public char[][] getGameTable() {
+        return gameTable;
+    }
+    public void printGameTable(){
+        for (char[] row : getGameTable()){
+            for (char colum : row)
+                System.out.print(colum);
+            System.out.println();
+        }
+    }
+    public void setGameTable(char[][] newGameTable){
+        gameTable = newGameTable;
+    }
 
 }
