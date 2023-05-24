@@ -103,20 +103,25 @@ public class GameFactory {
             }
         }
     }
-    public static void game(boolean gameMode){
-        System.out.println("Welcome the Tic Tac Toe game");
-        Table table = getTable();
+    public static void game(){
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
-        boolean turn = true;
+        Table table = getTable();
+        System.out.println("Welcome the Tic Tac Toe game");
+        System.out.print("| true is player versus player | false is player vs computer |\nChose game mode: ");
+        boolean turn = true, gameMode = Boolean.parseBoolean(keyboard.nextLine()), gameRule = gameMode;
+
 
         table.printGameTable();
 
         while(true){
             int pos;
-            if (gameMode)
+
+            if (!gameMode)
                 pos = getInput(keyboard);
-            else
+            else{
                 pos = getRandomNumberForTable(table);
+                System.out.println("Computer's choice: " + pos);
+            }
 
             if (pos < 1 || isPositionAlreadyTaken(table, pos)){
                 System.out.println("try again you did enter a wrong position");
@@ -125,14 +130,22 @@ public class GameFactory {
 
 
             table.setGameTable(setGameTable(table, pos, turn ? "X" : "O"));
+
             turn = !turn;
+            if (!gameRule)
+                gameMode = !gameMode;
 
             table.printGameTable();
+            System.out.println("--------------------------------");
+
             if(table.checkTable(!turn ? 'X' : 'O')){
-                System.out.printf("Congratulations, %s won!", !turn ? "Player" : "Computer");
+                System.out.printf("%s won!", !turn ? "Player" : "Computer");
                 break;
             }
-            if ()
+            if (isGameTableFull(table)){
+                System.out.println("Draw");
+                break;
+            }
         }
     }
     public static boolean isGameTableFull(Table table){
@@ -145,8 +158,5 @@ public class GameFactory {
         return true;
     }
 
-    public static void main(String[] args) {
-        game(false);
-    }
 
 }
