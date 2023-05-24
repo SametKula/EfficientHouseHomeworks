@@ -108,7 +108,7 @@ public class GameFactory {
         Table table = getTable();
         System.out.println("Welcome the Tic Tac Toe game");
         System.out.print("| true is player versus player | false is player vs computer |\nChose game mode: ");
-        boolean turn = true, gameMode = Boolean.parseBoolean(keyboard.nextLine()), gameRule = gameMode;
+        boolean turn = true, gameRule = Boolean.parseBoolean(keyboard.nextLine());
 
 
         table.printGameTable();
@@ -116,12 +116,13 @@ public class GameFactory {
         while(true){
             int pos;
 
-            if (!gameMode)
-                pos = getInput(keyboard);
-            else{
+            if (!gameRule && !turn){
                 pos = getRandomNumberForTable(table);
                 System.out.println("Computer's choice: " + pos);
             }
+            else
+                pos = getInput(keyboard);
+
 
             if (pos < 1 || isPositionAlreadyTaken(table, pos)){
                 System.out.println("try again you did enter a wrong position");
@@ -132,8 +133,7 @@ public class GameFactory {
             table.setGameTable(setGameTable(table, pos, turn ? "X" : "O"));
 
             turn = !turn;
-            if (!gameRule)
-                gameMode = !gameMode;
+
 
             table.printGameTable();
             System.out.println("--------------------------------");
