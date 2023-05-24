@@ -43,7 +43,67 @@ public class GameFactory {
         int pos = Integer.parseInt(kb.nextLine());
         return pos;
     }
-    public static void game(){
+    public static boolean isPositionAlreadyTaken(Table table, int pos){
+        switch(pos){
+            case 1:
+                if(table.getGameTable()[0][0] != ' '){
+                    return true;
+                }
+                break;
+            case 2:
+                if(table.getGameTable()[0][2] != ' '){
+                    return true;
+                }
+                break;
+            case 3:
+                if(table.getGameTable()[0][4] != ' '){
+                    return true;
+                }
+                break;
+            case 4:
+                if(table.getGameTable()[1][0] != ' '){
+                    return true;
+                }
+                break;
+            case 5:
+                if(table.getGameTable()[1][2] != ' '){
+                    return true;
+                }
+                break;
+            case 6:
+                if(table.getGameTable()[1][4] != ' '){
+                    return true;
+                }
+                break;
+            case 7:
+                if(table.getGameTable()[2][0] != ' '){
+                    return true;
+                }
+                break;
+            case 8:
+                if(table.getGameTable()[2][2] != ' '){
+                    return true;
+                }
+                break;
+            case 9:
+                if(table.getGameTable()[2][4] != ' '){
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+    public static int getRandomNumberForTable(Table table){
+        java.util.Random rd = new java.util.Random();
+
+        while(true){
+            int pos = rd.nextInt(9) + 1;
+            if(!isPositionAlreadyTaken(table, pos)){
+                return pos;
+            }
+        }
+    }
+    public static void game(boolean gameMode){
         System.out.println("Welcome the Tic Tac Toe game");
         Table table = getTable();
         java.util.Scanner keyboard = new java.util.Scanner(System.in);
@@ -52,7 +112,18 @@ public class GameFactory {
         table.printGameTable();
 
         while(true){
-            int pos = getInput(keyboard);
+            int pos;
+            if (gameMode)
+                pos = getInput(keyboard);
+            else
+                pos = getRandomNumberForTable(table);
+
+            if (pos < 1 || isPositionAlreadyTaken(table, pos)){
+                System.out.println("try again you did enter a wrong position");
+                continue;
+            }
+
+
             table.setGameTable(setGameTable(table, pos, turn ? "X" : "O"));
             turn = !turn;
 
@@ -61,11 +132,21 @@ public class GameFactory {
                 System.out.printf("Congratulations, %s won!", !turn ? "Player" : "Computer");
                 break;
             }
+            if ()
         }
+    }
+    public static boolean isGameTableFull(Table table){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j <= 4; j += 2) {
+                if (table.getGameTable()[i][j] == ' ')
+                    return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        game();
+        game(false);
     }
 
 }
