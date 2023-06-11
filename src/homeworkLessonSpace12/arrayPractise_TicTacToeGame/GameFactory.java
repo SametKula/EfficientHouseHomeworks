@@ -160,5 +160,17 @@ public class GameFactory {
         return table.getGameTable();
     }
 
+    public static int factoriel(int x){
+        if(x <= 2)
+            return x == 2 ? 2 : 1;
+
+        int result = 1;
+
+        for(int i = 2; i <= x; i++)
+            result *= i;
+
+        return result;
+    }
+
 
 }
