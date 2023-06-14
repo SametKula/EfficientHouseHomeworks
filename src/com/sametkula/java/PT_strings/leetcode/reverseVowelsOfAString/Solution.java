@@ -7,9 +7,7 @@ public class Solution {
         char[] ctr = s.toCharArray();
         if (s.isBlank() || s.length() < 2) return s;
         if (s.length() == 2) {
-            char c = Character.toLowerCase(ctr[0]);
-            char t = Character.toLowerCase(ctr[1]);
-            if ((c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') && (t == 'a' || t == 'e' || t == 'i' || t == 'o' || t == 'u')) {
+            if (isVowel(ctr[0]) && isVowel(ctr[1])) {
                 char temp = ctr[0];
                 ctr[0] = ctr[1];
                 ctr[1] = temp;
@@ -21,8 +19,7 @@ public class Solution {
 
         while (true) {
             while (true) {
-                char c = Character.toLowerCase(ctr[i]);
-                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                if (isVowel(ctr[j])) {
                     break;
                 }
                 i++;
@@ -31,8 +28,7 @@ public class Solution {
             }
 
             while (true) {
-                char c = Character.toLowerCase(ctr[j]);
-                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                if (isVowel(ctr[j])) {
                     break;
                 }
                 j--;
@@ -47,6 +43,10 @@ public class Solution {
             j--;
         }
         return new String(ctr);
+    }
+    private boolean isVowel(char c) {
+        c = Character.toLowerCase(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
 }
