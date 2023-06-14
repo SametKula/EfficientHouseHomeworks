@@ -2,60 +2,63 @@ package com.sametkula.java.PT_OOP.leetcode.addTwoNumbers;
 
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int result = 0;
-        ListNode sum = new ListNode(0);
-        ListNode curr = sum;
+        ListNode result = new ListNode();
+        ListNode dummy = result;
+        int remain = 0;
 
-
-        for (int i = 0; l1 != null || l2 != null; i++) {
+        while(l1 != null || l2 != null || remain >= 1) {
             int carry = 0;
-
-            if (l1.next != null){
+            if (l1 != null){
                 carry += l1.val;
                 l1 = l1.next;
-                System.out.println(1);
             }
-            if (l2.next != null) {
-
+            if (l2 != null){
+                carry += l2.val;
                 l2 = l2.next;
-                System.out.println(2);
             }
-
-            result += carry * pow(10,i);
-
+            carry += remain;
+            remain = carry / 10;
+            dummy.next = new ListNode(carry % 10);
+            dummy = dummy.next;
         }
-        while(result > 0) {
-            curr.val = result / pow(10,getDigits(result) - 1);
-            result = result % pow(10,getDigits(result) - 1);
-            curr.next = new ListNode(0);
-            curr = curr.next;
-
-        }
-        return sum;
+        return result.next;
     }
-    public void printListNode(ListNode node) {
-        while(node.next != null) {
-            System.out.println(node.val);
+
+
+
+
+    /*public int getDigits(int x) {
+        x = Math.abs(x);
+        return (String.valueOf(x)).length();
+    }
+    public int getListValue(ListNode node) {
+        int result = 0,i =0;
+
+        for (;node.next != null; i++) {
+            result += node.val * Math.pow(10,i);
             node = node.next;
         }
-    }
-    public int pow(int value, int pow) {
-        if(pow <= 0) return 1;
-        int result = 1;
-
-        for(int i = 0; i < pow; i++)
-            result *= value;
+        result += node.val * Math.pow(10,i);
 
         return result;
     }
-    public int getDigits(int x) {
-        if (x == 0) return 1;
-        int result = 0;
-        x = Math.abs(x);
-        while(x > 0) {
-            result++;
-            x /= 10;
+    public ListNode valueOf(int value){
+        if (value / 10 == 0) return new ListNode(value);
+
+        ListNode result = new ListNode();
+        ListNode dummy = result;
+
+        int i = 1 , digit = getDigits(value);
+        while( i < digit){
+            dummy.val = value % 10;
+            value = value / 10;
+
+            dummy.next = new ListNode();
+            dummy = dummy.next;
+            i++;
         }
+        dummy.val = value % 10;
+
         return result;
-    }
+    }*/
 }
