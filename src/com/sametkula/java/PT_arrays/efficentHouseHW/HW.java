@@ -1,6 +1,11 @@
 package com.sametkula.java.PT_arrays.efficentHouseHW;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedList;
+
 public class HW {
     public static int maxElement(int[] arr) {
         int result = arr[0];
@@ -65,5 +70,24 @@ public class HW {
                 min = i;
 
         return min;
+    }
+    public static int getSumOfEven(int[] arr){
+        int sum = 0;
+
+        for(int i : arr)
+            if (i % 2 == 0)
+                sum += i;
+
+        return sum;
+    }
+    public static int[] getSameElements(int[] arr, int[] tar){
+        HashSet<Integer> set = new HashSet<Integer>();
+
+        for (int i : arr)
+            set.add(i);
+        for (int i : tar)
+            set.add(i);
+
+        return new int[]{1};
     }
 }
