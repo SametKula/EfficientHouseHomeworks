@@ -1,10 +1,7 @@
 package com.sametkula.java.PT_arrays.efficentHouseHW;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
 
 public class HW {
     public static int maxElement(int[] arr) {
@@ -16,6 +13,7 @@ public class HW {
 
         return result;
     }
+
     public static int addAllElements(int[] arr) {
         int sum = 0;
 
@@ -24,6 +22,7 @@ public class HW {
 
         return sum;
     }
+
     public static int counter(int[] arr, int target) {
         int count = 0;
 
@@ -33,21 +32,24 @@ public class HW {
 
         return count;
     }
+
     public static void reverseArray(int[] arr) {
-        for (int i = 0, j = arr.length - 1; i < j; i++, j--){
+        for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
             int temp = arr[j];
             arr[j] = arr[i];
             arr[i] = temp;
         }
     }
-    public static int[] getOddElements(int[] arr){
+
+    public static int[] getOddElements(int[] arr) {
         int[] temp = new int[0];
-        for(int i: arr)
+        for (int i : arr)
             if (i % 2 == 1)
-                temp = addElement(temp,i);
+                temp = addElement(temp, i);
         return temp;
     }
-    private static int[] addElement(int[] arr, int element){
+
+    private static int[] addElement(int[] arr, int element) {
         int[] temp = new int[arr.length + 1];
 
         System.arraycopy(arr, 0, temp, 0, arr.length);
@@ -56,38 +58,62 @@ public class HW {
 
         return temp;
     }
-    public static double getMedial (int[] arr){
-        int sum = 0;
-        for(int i : arr)
-            sum += i;
-        return sum / (double)arr.length;
-    }
-    public static int min(int[] arr){
-        int min = arr[0];
 
-        for(int i : arr)
-            if (min > i)
-                min = i;
+    public static double getMedial(int[] arr) {
+        int sum = 0;
+        for (int i : arr)
+            sum += i;
+        return sum / (double) arr.length;
+    }
+
+    public static int min(int[] arr) {
+        return min(arr, 0, arr.length);
+    }
+
+    public static int min(int[] arr, int start, int end) {
+        int min = arr[start];
+
+        for (int i = start + 1; i < end; i++)
+            if (min > arr[i])
+                min = arr[i];
 
         return min;
     }
-    public static int getSumOfEven(int[] arr){
+
+    public static int getSumOfEven(int[] arr) {
         int sum = 0;
 
-        for(int i : arr)
+        for (int i : arr)
             if (i % 2 == 0)
                 sum += i;
 
         return sum;
     }
-    public static int[] getSameElements(int[] arr, int[] tar){
-        HashSet<Integer> set = new HashSet<Integer>();
 
+    private static boolean contains(int[] arr, int x) {
         for (int i : arr)
-            set.add(i);
-        for (int i : tar)
-            set.add(i);
+            if (i == x) return true;
 
-        return new int[]{1};
+        return false;
+    }
+
+    public static int[] getSameElements(int[] arr, int[] tar) {
+        int[] sum = new int[0];
+
+        for (int i : tar)
+            if (contains(arr, i) && contains(tar, i))
+                sum = addElement(sum, i);
+
+        return sum;
+    }
+
+    public static void shortArray(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++)
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[i]){
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
     }
 }
