@@ -1,19 +1,18 @@
 package com.sametkula.java.test;
 
-import com.sametkula.java.PT_arrays.leetcode.maximumArerageSubarray.Solution;
+import com.sametkula.java.PT_strings.leetcode.maximumNumberOfVowelsInASubstringOfGivenLength.Solution;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 
 public class SolutionTest {
-    @org.junit.Test
-    @DisplayName("junit test results")
-    public void findMaxAverage(){
+
+    @Test
+    public void maxVowels() throws Exception {
         Solution solution = new Solution();
-        int[] arr = new int[]{1,12,-5,-6,50,3};
 
-        Assertions.assertEquals(12.75000,solution.findMaxAverage(arr,4));
-
+        Assertions.assertEquals(3, solution.maxVowels("abciiidef",3));
+        Assertions.assertEquals(4, solution.maxVowels("weallloveyou",7));
     }
-
 
 }
