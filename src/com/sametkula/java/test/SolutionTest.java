@@ -14,6 +14,12 @@ public class SolutionTest {
 
         Assertions.assertEquals(10,solution.longestOnes(new int[]{0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3));
     }
+    @Test
+    public void testLongestOnes1() throws Exception {
+        Solution solution = new Solution();
+
+        Assertions.assertEquals(6,solution.longestOnes(new int[]{1,1,1,0,0,0,1,1,1,1,0}, 2));
+    }
 
 
 
