@@ -1,26 +1,19 @@
 package com.sametkula.java.test;
 
 
-import com.sametkula.java.PT_arrays.leetcode.maxConsecutiveOnesIII.Solution;
+import com.sametkula.java.PT_arrays.leetcode.longestSubarrayof1sDeletingOneElement.Solution;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 
 public class SolutionTest {
 
-    @Test
-    public void testLongestOnes() throws Exception {
-        Solution solution = new Solution();
+   @Test
+    public void test(){
+       Solution solution = new Solution();
 
-        Assertions.assertEquals(10,solution.longestOnes(new int[]{0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3));
-    }
-    @Test
-    public void testLongestOnes1() throws Exception {
-        Solution solution = new Solution();
-
-        Assertions.assertEquals(6,solution.longestOnes(new int[]{1,1,1,0,0,0,1,1,1,1,0}, 2));
-    }
-
+       Assertions.assertEquals(5, solution.longestSubarray(new int[]{0,1,1,1,0,1,1,0,1}));
+   }
 
 
 }
