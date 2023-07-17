@@ -109,11 +109,34 @@ public class HW {
 
     public static void shortArray(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++)
-            for (int j = i + 1; j < arr.length; j++)
-                if (arr[j] < arr[i]){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
                     int temp = arr[j];
                     arr[j] = arr[i];
                     arr[i] = temp;
                 }
+            }
+    }
+    public static void shortArray2(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++){
+            int max = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[max])
+                    max = j;
+            }
+            int temp = arr[i];
+            arr[i] = arr[max];
+            arr[max] = temp;
+        }
+    }
+    public static void bubbleShort(int[] arr){
+
+    }
+}
+class Test{
+    public static void main(String[] args) {
+        int[] arr = new int[] {1,2,3,4,5,6,7};
+        HW.shortArray2(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

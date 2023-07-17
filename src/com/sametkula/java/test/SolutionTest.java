@@ -1,7 +1,7 @@
 package com.sametkula.java.test;
 
 
-import com.sametkula.java.PT_arrays.leetcode.findTheDifferenceOfTwoArrays.Solution;
+import com.sametkula.java.PT_strings.leetcode.longestPalindromicSubstring.Palindrome;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -12,19 +12,18 @@ import java.util.Scanner;
 
 
 public class SolutionTest {
-  public static void main(String[] args) {
-    Scanner kb = new Scanner(System.in);
-    while(true){
-      int i = Integer.parseInt(kb.nextLine());
-    }
-  }
-
   @Test
-  synchronized public void test(){
-    Solution solution = new Solution();
+  public void test(){
+    Palindrome palette = new Palindrome();
 
-    System.out.println(solution.findDifference(new int[]{1, 2, 3} , new int[]{4, 2, 6}));
+    Assertions.assertEquals("bab", palette.longestPalindrome("nmsfdaijbgnhjisadbgfhijubasdbijhsdjsdhhsdhshsdhsddafwerfbv"));
   }
+ /*
+  @Test
+  public void test2(){
+    Palindrome palette = new Palindrome();
 
-
+    Assertions.assertEquals("gykrkyg", palette.longestPalindrome("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir"));
+  }
+*/
 }
