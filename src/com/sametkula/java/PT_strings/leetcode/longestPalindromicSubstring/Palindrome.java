@@ -8,19 +8,18 @@ public class Palindrome {
         StringBuilder dummy = new StringBuilder();
         int left = 0 , right = 0;
 
-        for (int i = 1; i < s.length(); i++) {
-            System.out.println(dummy.toString());
+        for (int i = 0; i < s.length(); i++) {
             dummy.delete(0,dummy.length());
-            System.out.println(dummy.toString());
             dummy.append(s.charAt(i));
+
             left = 1;
             right = 1;
 
-            if (s.charAt(i - left) == dummy.charAt(0)){
+            if (i - left >= 0 && s.charAt(i - left) == dummy.charAt(0)&& i + right < s.length() && s.charAt(i + right) != dummy.charAt(0)){
                 dummy.append(s.charAt(i - left));
                 left++;
             }
-            else if (i + right < s.length() && s.charAt(i + right) == dummy.charAt(0)){
+            else if (i + right < s.length() && s.charAt(i + right) == dummy.charAt(0) && i - left >= 0 &&s.charAt(i - left) != dummy.charAt(0)){
                 dummy.append(s.charAt(i + right));
                 right++;
             }
@@ -39,7 +38,6 @@ public class Palindrome {
             if (dummy.length() > result.length()){
                 result.delete(0 , result.length());
                 result.append(dummy);
-                System.out.printf("i = %d; dummy = %s\n", i, dummy.toString());
             }
         }
 

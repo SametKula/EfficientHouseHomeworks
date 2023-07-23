@@ -16,14 +16,33 @@ public class SolutionTest {
   public void test(){
     Palindrome palette = new Palindrome();
 
-    Assertions.assertEquals("bab", palette.longestPalindrome("nmsfdaijbgnhjisadbgfhijubasdbijhsdjsdhhsdhshsdhsddafwerfbv"));
-  }//                                                                                               dhdjbsbjdhd
+    Assertions.assertEquals("iadanadaadaadanadai", palette.longestPalindrome("nmsfdaijbgnhjisadbgfhiadanadaadaadanadaijhsdjsdhhsdhshsdhsddafwerfbv"));
+  }
+  @Test
+  public void test3(){
+    Palindrome palette = new Palindrome();
+
+    Assertions.assertEquals("ccc", palette.longestPalindrome("ccc"));
+  }
+
+  @Test
+  public void test5(){
+    Palindrome palette = new Palindrome();
+
+    Assertions.assertEquals("bb", palette.longestPalindrome("bb"));
+  }
 
   @Test
   public void test2(){
     Palindrome palette = new Palindrome();
 
     Assertions.assertEquals("gykrkyg", palette.longestPalindrome("zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir"));
+  }
+  @Test
+  public void test4(){
+    Palindrome palette = new Palindrome();
+
+    Assertions.assertEquals("a", palette.longestPalindrome("ac"));
   }
 
 }
