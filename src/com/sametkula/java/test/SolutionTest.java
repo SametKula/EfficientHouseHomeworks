@@ -24,6 +24,12 @@ public class SolutionTest {
 
     Assertions.assertEquals("ccc", palette.longestPalindrome("ccc"));
   }
+  @Test
+  public void test6(){
+    Palindrome palette = new Palindrome();
+
+    Assertions.assertEquals("aaaa", palette.longestPalindrome("aaaa"));
+  }
 
   @Test
   public void test5(){

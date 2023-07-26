@@ -1,52 +1,26 @@
 package com.sametkula.java.PT_strings.leetcode.longestPalindromicSubstring;
 
 public class Palindrome {
+    int maxLength, leftBorder;
     public String longestPalindrome(String s) {
         if (s.length() < 2)
             return s;
-        StringBuilder result = new StringBuilder();
-        StringBuilder dummy = new StringBuilder();
-        int left = 0 , right = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            dummy.delete(0,dummy.length());
-            dummy.append(s.charAt(i));
+            expand(s,i,i);
+            expand(s,i,i + 1);
 
-            left = 1;
-            right = 1;
-
-            if (i - left >= 0 && s.charAt(i - left) == dummy.charAt(0)&& i + right < s.length() && s.charAt(i + right) != dummy.charAt(0)){
-                dummy.append(s.charAt(i - left));
-                left++;
-            }
-            else if (i + right < s.length() && s.charAt(i + right) == dummy.charAt(0) && i - left >= 0 &&s.charAt(i - left) != dummy.charAt(0)){
-                dummy.append(s.charAt(i + right));
-                right++;
-            }
-
-            while(isPalindrome(dummy.toString()) && i - left >= 0 && i + right < s.length()) {
-                dummy.append(s.charAt(i - left));
-                dummy.insert(0,s.charAt(i + right));
-
-                left++;
-                right++;
-            }
-            if (!isPalindrome(dummy.toString())){
-                dummy.delete(0 , 1);
-                dummy.delete(dummy.length() - 1 , dummy.length());
-            }
-            if (dummy.length() > result.length()){
-                result.delete(0 , result.length());
-                result.append(dummy);
-            }
         }
-
-        return result.toString();
+        return s.substring(leftBorder,leftBorder + maxLength);
     }
-    public boolean isPalindrome(String s) {
-        return s.equals(reverseString(s));
-    }
-    public String reverseString(String s) {
-        return new StringBuilder(s).reverse().toString();
+    public void expand(String s, int i, int j){
+        while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
+            i--;
+            j++;
+        }
+        if (maxLength < j - i - 1) {
+            maxLength = j - i - 1;
+            leftBorder = i + 1;
+        }
     }
 }
