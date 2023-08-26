@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Solution {
     public List<String> letterCompinations(String digits){
-        char[][] chars = new char[8][3];
+        var allChars = new String[]{"abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+        var sb = new StringBuilder();
 
-        return new ArrayList<String>();
+        return new ArrayList<>();
     }
 }
